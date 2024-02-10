@@ -297,14 +297,14 @@
                   <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
                     <td style="padding:20px;width:25%;vertical-align:middle">
                      <div class="one">
-                       <div class="two" id='neurips_image'>
-                            <a href="images/arxiv.jpg"><img style="width:110%;max-width:130%;height:95%;" alt="" src="images/arxiv.jpg" class="hoverZoomLink"></a>
+                        <div class="two" id='neurips_image'>
+                            <a href="images/tSNE_each_sub1.png"><img style="width:110%;max-width:130%;height:85%;" alt="" src="images/tSNE_each_sub1.png" class="hoverZoomLink"></a>
                       </div>
                     </div>
                     </td>
                     <td style="padding:20px;width:75%;vertical-align:middle">
                       <a href="">
-                      <papertitle>Acoustic-to-Articulatory Inversion for Dysarthric Speech: Are Pre-Trained Self-Supervised Representations Favorable? [PREPRINT]
+                      <papertitle>Acoustic-to-Articulatory Inversion for Dysarthric Speech: Are Pre-Trained Self-Supervised Representations Favorable?
                       </papertitle>
                       </a>
                       <br>
@@ -313,13 +313,29 @@
                       <a href='https://www.linkedin.com/in/shoumik-nandi-766b82175'>Shoumik Nandi</a>,
                       <a href="https://www.ajitesh-srivastava.com/">Ajitesh Srivastava</a>
                       <br>
-                      <!-- <em>International Conference of Acoustics, Speech, and Signal Processing (ICASSP)</em> 2021 <br> -->
+                      <em>IEEE International Conference of Acoustics, Speech, and Signal Processing Workshops (ICASSPW)</em> 2024 <br>
                       <!-- <em>ECCV 2022 Workshop on Visual Object-oriented Learning meets Interaction (VOLI): Discovery, Representations, and Applications</em> -->
                       <br>
                       <a href="https://arxiv.org/abs/2309.01108">[Paper]</a> 
                       <br>
                       <p></p>
-                      <p>Acoustic-to-articulatory inversion (AAI) involves mapping from the acoustic space to the articulatory space. Signal-processing features like the MFCCs, have been widely used for the AAI task. For subjects with dysarthric speech, AAI is challenging because of an imprecise and indistinct pronunciation. In this work, we perform AAI for dysarthric speech using representations from pre-trained self-supervised learning (SSL) models. We demonstrate the impact of different pre-trained features on this challenging AAI task, at low-resource conditions. In addition, we also condition x-vectors to the extracted SSL features to train a BLSTM network. Overall, SSL networks like wav2vec, APC, and DeCoAR, which are trained with feature reconstruction or future timestep prediction tasks, perform well in predicting dysarthric articulatory trajectories.</p>
+                      <p>Acoustic-to-articulatory inversion (AAI) involves mapping from the
+                        acoustic to the articulatory space. Signal-processing features like
+                        the MFCCs, have been widely used for the AAI task. For subjects
+                        with dysarthric speech, AAI is challenging because of an imprecise and indistinct pronunciation. In this work, we perform AAI
+                        for dysarthric speech using representations from pre-trained selfsupervised learning (SSL) models. We demonstrate the impact of
+                        different pre-trained features on this challenging AAI task, at low-resource conditions. In addition, we also condition x-vectors to the
+                        extracted SSL features to train a BLSTM network. In the seen case,
+                        we experiment with three AAI training schemes (subject-specific,
+                        pooled, and fine-tuned). The results, consistent across training
+                        schemes reveal that DeCoAR, in the fine-tuned scheme, achieves a
+                        relative improvement of the Pearson Correlation Coefficient (CC) by
+                        ∼1.81% and ∼4.56% for healthy controls and patients, respectively,
+                        over MFCCs. We observe similar average trends for different SSL
+                        features in the unseen case. Overall, SSL networks like wav2vec,
+                        APC, and DeCoAR, trained with feature reconstruction or future
+                        timestep prediction tasks, perform well in predicting dysarthric
+                        articulatory trajectories</p>
                     </td>
                   </tr>
 
@@ -395,7 +411,37 @@
           <button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-education" id="education"><heading>Research Experiences</heading></button>
           <div id="content-experience" class="collapse in">
           <table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto"><tbody>
-
+		  
+	  <tr>
+              <td style="padding:10px;width:25%;vertical-align:middle">
+                  <div class="one">
+                      <img src='images/utd.png' width="90" class="side-image">
+                  </div>
+              </td>
+              <td style="padding:10px;width:75%;vertical-align:top">
+                  <!-- <papertitle style="color:gray"><big>Software Development Engineer Intern</big> </papertitle> <papertitle ><big> | Expedia Group</big></papertitle> -->
+                  <papertitle><big>The University of Texas at Dallas</big></papertitle>
+                  <br>
+                  <papertitle style="color:green"><big>Graduate Research Assistant</big></papertitle>
+                  <br>
+<i>Richardson, TX</i>
+                  <br>                              							    
+                  Aug 2023 - Present
+                  <br>
+                  <br>
+                  <p>
+                      
+                      <ul>
+                          <li><b>Supervisor -</b> <a href="https://scholar.google.com/citations?user=BxIXuZYAAAAJ&hl=en&authuser=1"> Dr. Yunhui Guo </a></li>
+                          <li><b>Activities - </b>
+                            <ul>
+                              <li> Currently working on problems related to efficient model fine-tuning and continual test-time domain adaptation.</li>
+                          </li>
+                      </ul>
+                  </p>
+              </td>
+          </tr>
+		  
           <tr>
               <td style="padding:10px;width:25%;vertical-align:middle">
                   <div class="one">
@@ -406,7 +452,7 @@
                   <!-- <papertitle style="color:gray"><big>Software Development Engineer Intern</big> </papertitle> <papertitle ><big> | Expedia Group</big></papertitle> -->
                   <papertitle><big>University of Southern California</big></papertitle>
                   <br>
-                  <papertitle style="color:green"><big>Graduate Research Assistant</big></papertitle>
+                  <papertitle style="color:green"><big>Student Researcher</big></papertitle>
                   <br>
 <i>Los Angeles, CA</i>
                   <br>                              							    
@@ -586,7 +632,7 @@
           <table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto"><tbody>
             <tr>
               <ul>
-		<li>I'm TAing two undergraduate CS classes at UTD, this Fall - CS 4365 and CS 4348. </li>
+		<li>Reviewer - ECCV 2024 </li>
                 <li>Building <a href="https://cordai.org/">CORD.ai</a>, a deep learning research community, as a core member and volunteer researcher. </li>
                 <li>Course Mentor/Grader for graduate level EE 541: An Introduction to Deep Learning (Spring 2022).</li>
                 <li>USC IEEE Graduate Society - Member, strengthen academic and social growth of the members, and host workshops.</li>
