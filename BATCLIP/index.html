@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">BATCLIP: Bimodal Online Test-Time Adaptation for CLIP</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://sarthaxxxxx.github.io/" target="_blank">Sarthak Kumar Maharana<sup>1</sup></a>,</span>
+                <span class="author-block"></span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/baoming-zhang-286083313/" target="_blank">Baoming Zhang<sup>1</sup></a>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=WbO7tjYAAAAJ&hl=en" target="_blank">Leonid Karlinsky<sup>2</sup></a>, </span>
+                <span class="author-block">
+                    <a href="https://www.rogerioferis.org/" target="_blank">Rogerio Feris<sup>2</sup></a>, </span>
+                  <span class="author-block">
+                    <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo<sup>1</sup></a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>The University of Texas at Dallas, <sup>2</sup>MIT-IBM Watson AI Lab <br><a href="https://iccv.thecvf.com/">ICCV 2025</a>, Honolulu, Hawai'i 🌴🏖️</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2412.02837" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/sarthaxxxxx/BATCLIP" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">TL;DR🗒️</h2>
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        We demonstrate that zero-shot CLIP exhibits limited robustness to common image corruptions at test time, with poor transferability across domains. This highlights the need to adapt CLIP to unlabeled, corrupted images using test-time adaptation (TTA). To address this, we introduce <b>BATCLIP</b>, a bimodal, online (single gradient step) TTA method designed to enhance CLIP's robustness to common corruptions. This also extends and improves performance on domain generalization benchmarks.
+    </div>
+  </div>
+</section>
+
+<!-- Teaser image-->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Our framework of online CLIP adaptation at test-time 💡</h2>
+    <div class="hero-body">
+      <img src="static/images/batclip.png" alt="Description of the image" height="100%">
+      <h2 class="subtitle has-text-centered">
+        <b>BATCLIP</b> framework: BATCLIP not only adapts the visual encoder for highly discriminative image features but also promotes a strong alignment between image and text features by adapting the text encoder too, leading to improved performance
+    following test-time adaptation. Overall, our losses include entropy minimization, a projection matching loss between the visual class prototypes and the corresponding text feature. Our final loss is to encourage the seperation of prototypes to learn strong decision boundaries. We adapt only the LayerNorm parameters of CLIP encoders. This account for ~0.044% of total parameters.</h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Although open-vocabulary classification models like Contrastive Language Image Pretraining (CLIP) have demonstrated strong zero-shot learning capabilities, their robustness to common image corruptions remains poorly understood. Through extensive experiments, we show that zero-shot CLIP lacks robustness to common image corruptions during test-time, necessitating the adaptation of CLIP to unlabeled corrupted images using test-time adaptation (TTA). However, we found that existing TTA methods have severe limitations in adapting CLIP due to their unimodal nature. To address these limitations, we propose <b>BATCLIP</b>, a bimodal online TTA method designed to improve CLIP's robustness to common image corruptions. The key insight of our approach is not only to adapt the visual encoders for improving image features but also to strengthen the alignment between image and text features by promoting a stronger association between the image class prototype, computed using pseudo-labels, and the corresponding text feature. We evaluate our approach on benchmark image corruption datasets and achieve state-of-the-art results in online TTA for CLIP. Furthermore, we evaluate our proposed TTA approach on various domain generalization datasets to demonstrate its generalization capabilities.        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Limited robustness of zero-shot CLIP across backbones 🧑‍💼</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/severity_skm-1.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Task-wise mean accuracy (%) of zero-shot CLIP across corruption severity levels. <p><span style="color:#FF00FF;">Dashed lines</span> show zero-shot CLIP performance on corresponding source test sets (clean).</p>
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/inc_p_skm-1.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Mean classification accuracy (in %) across all the corruption types vs. accuracy on corresponding source test sets, evaluated using various prompt templates and across vision backbones.
+        </h2>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Main Results 📈</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+We encourage you to read the paper for additional details, results, and in-depth discussions!   
+<div class="item">
+        <!-- Your image here -->
+        <img src="static/images/main_results.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+BATCLIP vs other TTA baselines on CIFAR-10C, CIFAR-100C, and ImageNet-C. </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/tsne.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          BATCLIP yields more discriminative visual features that exhibit stronger alignment with their corresponding text features. Please see the Appendix for further details.
+        </h2>
+      </div>
+
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/generalization.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          BATCLIP extends to various domain generalization datasets too.
+        </h2>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+
+
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title has-text-centered">BibTeX citation 🔖</h2>
+      If our work is of interest to you, consider citing it. 
+      <pre><code>@inproceedings{maharana2025batclip,
+        title={BATCLIP: Bimodal Online Test-Time Adaptation for CLIP},
+        author={Maharana, Sarthak Kumar and Zhang, Baoming and Karlinsky, Leonid and Feris, Rogerio and Guo, Yunhui},
+        booktitle={International Conference on Computer Vision (ICCV)},
+        year={2025}
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <!-- You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative -->
+            <!-- Commons Attribution-ShareAlike 4.0 International License</a>. -->
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
