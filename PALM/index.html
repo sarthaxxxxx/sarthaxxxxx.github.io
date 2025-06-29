@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">PALM: Pushing Adaptive Learning Rate Mechanisms for Continual Test-Time Adaptation</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://sarthaxxxxx.github.io/" target="_blank">Sarthak Kumar Maharana</a>,</span>
+                <span class="author-block">
+                  Baoming Zhang</a>,</span>
+                  <span class="author-block">
+                    <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">The University of Texas at Dallas, Richardson, TX<br><a href="https://aaai.org/conference/aaai/aaai-25/">AAAI 2025</a> (Oral)</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2403.10650.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/sarthaxxxxx/PALM" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2403.10650" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser image-->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Our Framework for Continual Test-Time Adaptation</h2>
+    <div class="hero-body">
+      <img src="static/images/PALM02.png" alt="Description of the image" height="100%">
+      <h2 class="subtitle has-text-centered">
+        <b>PALM</b> framework: At time t, input batch x<sub>k</sub> is processed by the model, parameterized by θ<sub>t</sub>. The KL-divergence between the softmax predictions and a uniform
+        distribution is backpropagated to select the layers with the gradient norm ≤ η, to
+        quantify the uncertainty. The parameter sensitivities of these layers, as an indicator of
+        domain shift meters, are computed to update their learning rates. Finally, with the optimization objective, we update the model with the adjusted learning
+        rates of the parameters.  </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Real-world vision models in dynamic environments face rapid shifts in domain distributions, leading to decreased recognition performance. Using unlabeled test data, continuous test-time adaptation (CTTA) directly adjusts a pre-trained source discriminative model to these changing domains. A highly effective CTTA method involves applying layer-wise adaptive learning rates for selectively adapting pre-trained layers. However, it suffers from the poor estimation of domain shift and the inaccuracies arising from the pseudo-labels. This work aims to overcome these limitations by identifying layers for adaptation via quantifying model prediction uncertainty without relying on pseudo-labels. We utilize the magnitude of gradients as a metric, calculated by backpropagating the KL divergence between the softmax output and a uniform distribution, to select layers for further adaptation. Subsequently, for the parameters exclusively belonging to these selected layers, with the remaining ones frozen, we evaluate their sensitivity to approximate the domain shift and adjust their learning rates accordingly. We conduct extensive image classification experiments on CIFAR-10C, CIFAR-100C, and ImageNet-C, demonstrating the superior efficacy of our method compared to prior approaches.          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">CTTA Experimental Results</h2>
+      Each task with K batches, of a certain data distribution, arrives at time step t. At time step t=0, the model
+      is initialized to θ<sup>s</sup>. It is then gradually adapted to each incoming batch x<sub>k</sub> of the current task in an online manner, where the model
+      parameters are updated to θ<sup>t</sup>. The source dataset is unavailable in this adaptation process due to privacy and storage constraints. For the experiments, each dataset contains a set of 15 corruption styles
+      as tasks (e.g. gaussian noise, shot noise, . . .) with 5 severity
+      levels - indicating corruption strength. The model is evaluated on the CIFAR-10C, CIFAR-100C, and ImageNet-C datasets. The mean errors (%) are shown below.
+      <div id="results-carousel" class="carousel results-carousel">
+
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/cifar10.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Mean errors (%) on CIFAR-10C.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/cifr100.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Mean errors (%) on CIFAR-100C.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/inc.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Mean errors (%) on ImageNet-C.
+       </h2>
+     </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Ablation Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/lr importance.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Illustration of learning rate importance across different
+          convolutional blocks/stages/layers during CTTA. [Top row]
+          - Variations for the domain “glass blur” across datasets.
+          [Bottom row] - Variations for the domain “snow”. Conclusion: The initial layers are adapted more to the target domain.
+          In addition to that, we also notice more sparsity in the deeper layers.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/ablation_alpha_t.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Ablation results on smoothing factor α and temperature T.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/adapted_params.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          PALM is computationally inexpensive and requires minimal memory overhead. This leads to a large preservation of source domain knowledge. The number of adapted parameters is shown for each dataset.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/ad_lr.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        The mentioned optimizers do not adjust layer-wise LRs based on parameter
+        sensitivity, failing to capture rapid domain shifts, resulting
+        in poorer performance compared to PALM. 
+      </h2>
+   </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      If our work is of interest to you, consider citing it. 
+      <pre><code>@inproceedings{maharana2024palm,
+        title={PALM: Pushing Adaptive Learning Rate Mechanisms for Continual Test-Time Adaptation},
+        author={Maharana, Sarthak Kumar and Zhang, Baoming and Guo, Yunhui},
+        booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+        year={2025}
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <!-- You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative -->
+            <!-- Commons Attribution-ShareAlike 4.0 International License</a>. -->
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
