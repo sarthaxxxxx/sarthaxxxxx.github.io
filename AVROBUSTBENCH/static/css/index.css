@@ -1,0 +1,306 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.eql-cntrb { 
+  font-size: smaller;
+}
+
+
+
+.author-gallery {
+  margin-top: 0.75rem;
+}
+
+.author-card {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.author-card .image {
+  margin: 0 auto 0.5rem auto;
+}
+
+.author-card img {
+  border-radius: 9999px; /* circle */
+  object-fit: cover;
+}
+
+.author-name a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.author-name a:hover {
+  text-decoration: underline;
+}
+
+.author-equal {
+  font-weight: 700;
+  font-size: 0.85em;
+  vertical-align: super;
+}
+
+
+:root{
+  --accent:#e63946;           /* red */
+  --accent-2:#8a3ffc;         /* purple */
+  --ink:#1f2430;              /* text */
+  --muted:#697386;            /* muted text */
+  --card-shadow:0 6px 20px rgba(0,0,0,0.06);
+  --radius:14px;
+  --section-pad:3.2rem;
+}
+
+/* Global typography tweaks */
+body{ color:var(--ink); }
+.title, .subtitle{ letter-spacing:.2px; }
+
+/* Utility spacing for sections */
+.section, .hero.teaser{ padding-top:var(--section-pad); padding-bottom:var(--section-pad); }
+
+/* Gradient text utility */
+.gradient-text{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+
+/* Pretty divider */
+.section-divider{
+  height:1px; width:100%; max-width:980px; margin:2.5rem auto;
+  background:linear-gradient(90deg, transparent, #e9edf3 30%, #e9edf3 70%, transparent);
+}
+
+/* Card polish (figures, tables) */
+.figure-card{
+  border-radius:var(--radius);
+  box-shadow:var(--card-shadow);
+  overflow:hidden;
+}
+.figure-card img{ display:block; width:100%; }
+.figure-caption{
+  color:var(--muted);
+  font-size:.95rem;
+  padding:.75rem 1rem 1rem;
+  text-align:center;
+}
+
+/* Buttons: make your link buttons pop */
+.button.is-dark.external-link{
+  border:none;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.button.is-dark.external-link:hover{
+  transform:translateY(-1px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Tabs: bigger + bold (you already asked for this; consolidating here) */
+#results .tabs.is-boxed li a{
+  font-weight:700; font-size:clamp(1rem,1.2vw,1.2rem);
+  padding:.9rem 1.25rem;
+}
+#results .tabs.is-boxed li.is-active a{
+  border-color:var(--accent)!important; color:var(--accent)!important;
+  box-shadow:0 3px 8px rgba(230,57,70,.15);
+}
+
+/* Quad grid labels (if you want labels on images later) */
+.quad-card{ border-radius:var(--radius); box-shadow:var(--card-shadow); }
+
+
+/* ========= THEME TOKENS ========= */
+:root{
+  --bg: #ffffff;
+  --ink: #1f2430;
+  --muted: #697386;
+  --card: #ffffff;
+  --card-border: #e6eaf0;
+  --shadow: 0 6px 20px rgba(0,0,0,.06);
+
+  --accent: #e63946;   /* your red */
+  --accent-2:#8a3ffc;  /* purple */
+}
+
+/* Dark theme overrides */
+:root[data-theme="dark"]{
+  --bg: #0f172a;       /* slate-900 */
+  --ink: #e5e7eb;      /* gray-200 */
+  --muted: #9aa4b2;    /* gray-400 */
+  --card: #0b1222;     /* deep panel */
+  --card-border: #1f2a44;
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+/* ========= GLOBAL HOOKS ========= */
+html, body { background: var(--bg); color: var(--ink); }
+
+/* Bulma helpers mapped to tokens */
+.title, .subtitle { color: var(--ink); }
+.content, .hero, .section { color: var(--ink); }
+
+/* Cards / figure wrappers */
+.figure-card{
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+.figure-caption{ color: var(--muted); }
+
+/* Tabs */
+#results .tabs.is-boxed li a{ color: var(--ink); }
+#results .tabs.is-boxed li.is-active a{
+  border-color: var(--accent)!important;
+  color: var(--accent)!important;
+  box-shadow: 0 3px 8px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+/* Notification tint (Motivation box) */
+.notification.is-danger.is-light{
+  background: color-mix(in oklab, var(--accent) 12%, var(--bg));
+  border-left: 6px solid var(--accent);
+  color: var(--ink);
+}
+
+/* Buttons */
+.button.is-dark.external-link{
+  background: linear-gradient(180deg, #2a2f3a, #171a21);
+  color: #fff;
+  border: 1px solid #2f3644;
+  box-shadow: var(--shadow);
+}
+:root[data-theme="dark"] .button.is-dark.external-link{
+  background: linear-gradient(180deg, #1e2330, #12151d);
+  border-color: #2b3240;
+}
+
+/* Smooth theme transitions */
+* { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
