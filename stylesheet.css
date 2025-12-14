@@ -169,8 +169,8 @@ heading {
   font-size: 24px;
   font-weight: 700;
   display: block;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 papertitle {
@@ -181,7 +181,7 @@ papertitle {
 name {
   font-size: 32px;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .one {
@@ -273,5 +273,55 @@ table {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+  }
+}
+
+/* Publications Flexbox Layout */
+.publication-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Reduced gap between items */
+}
+
+.publication-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 5px 0;
+  /* Reduced padding */
+  transition: background-color 0.3s ease;
+}
+
+.publication-item:hover {
+  background-color: var(--highlight-bg);
+}
+
+.pub-image {
+  width: 25%;
+  padding: 10px 20px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pub-content {
+  width: 75%;
+  padding: 10px;
+}
+
+/* Mobile responsive for new layout */
+@media (max-width: 768px) {
+  .publication-item {
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .pub-image,
+  .pub-content {
+    width: 100%;
+    padding: 10px 0;
   }
 }
