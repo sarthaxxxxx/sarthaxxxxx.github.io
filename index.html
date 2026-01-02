@@ -1,949 +1,607 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sarthak Kumar Maharana</title>
 
-  <meta name="author" content="Sarthak Kumar Maharana">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <!-- Favicon -->
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+  <!-- Bootstrap 4 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .header {
+      width: auto;
+      max-width: auto;
+      font-family: Arial;
+      padding: 2rem 1rem;
+    }
+
+    a:link,
+    a:visited {
+      color: #0071bc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #208799;
+    }
+
+    .hgap-6perc {
+      width: 6%;
+    }
+
+    .hgap-7perc {
+      width: 7%;
+    }
+
+    ::selection {
+      background: rgba(220, 220, 220);
+    }
+
+    .section-div {
+      height: 3em
+    }
+
+    .content-div {
+      height: 2em
+    }
+
+    .small-div {
+      height: 0.5em
+    }
+
+    .link-badges {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .link-badges .badge {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 3px 5px;
+      font-size: 14px;
+      font-weight: 500;
+
+      color: #111827;
+      text-decoration: none;
+      background: #ffffff;
+
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      line-height: 1.2;
+
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .link-badges .badge i {
+      margin-right: 4px;
+      font-size: 14px;
+    }
+
+    .link-badges .badge:hover {
+      background: #f3f4f6;
+      border-color: #cbd5f5;
+    }
+
+    .authors {
+      font-size: 16px;
+      color: #333333;
+    }
+
+    .authors a:link,
+    .authors a:visited {
+      color: #666666 !important;
+      text-decoration: none;
+    }
+
+    .toggle-item {
+      display: none;
+    }
+
+    .no-bullet {
+      list-style: none;
+      margin-left: 0em;
+    }
+
+    #toggle-button {
+      display: inline-block;
+      margin-top: 0px;
+      color: #0056b3;
+      cursor: pointer;
+      font-weight: 500;
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function toggleActivities() {
+      const hiddenItems = document.querySelectorAll('.toggle-item');
+      const button = document.getElementById('toggle-button');
+      const isHidden = hiddenItems[0].style.display === 'none' || hiddenItems[0].style.display === '';
+
+      hiddenItems.forEach(item => {
+        item.style.display = isHidden ? 'list-item' : 'none';
+      });
+
+      button.textContent = isHidden ? 'Show less...' : 'Show more...';
+    }
+  </script>
 </head>
 
-
 <body>
-  <table
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0px">
-                <td style="padding:5px;width:63%;vertical-align:middle">
-                  <p style="text-align:center">
-                    <name><b>Sarthak Kumar Maharana</b></name>
-                  </p>
 
-                  <p>
-                    I'm a "third-year" CS PhD candidate at the University of Texas at Dallas (UTD), advised by <a
-                      href=https://yunhuiguo.github.io /> Dr. Yunhui Guo</a>. I'm a part of the <a
-                      href="https://deil-lab-utd.github.io/">Data Efficient Intelligent Learning Lab</a>. Before this, I
-                    obtained my MS in Electrical Engineering from the University of Southern California (USC) and a
-                    Bachelor's degree from
-                    IIIT Bhubaneswar (IIIT-Bh), India, with an honors degree in Electrical and Electronics Engineering.
-                  </p>
-
-                  <!--               <p>
-                My research interests broadly encompass multimodal learning (Vision + X) with a larger focus on the efficient adaptation of models to distributional shifts, improving their robustness, and generalization at test-time. Additional interests lie in data-centric ML (continual, few-shot, transfer learning), and human-centered AI. I am also engaged in projects on active learning and machine unlearning in generative models.
-              </p> -->
-                  Here are some of the key directions driving my research:
-                  <ul>
-                    <!-- <li> Lately, I've been interested in <b>generative modeling</b> with a focus on <b>alignment</b>. -->
-                    <li> Investigating how <b>foundational models</b>, at test-time, can
-                      remain <b>robust, adaptable</b>, and capable of <b>learning continually</b> in open and dynamic
-                      environments.</li>
-                    <!--<li> Construct AI systems that can continuously learn and adapt while retaining the knowledge of previously learned tasks.</li>-->
-                    <li> <b>Data- and label-efficient</b> learning paradigms.</li>
-                  </ul>
-
-                  <p>
-                    During my Masters, I closely worked with <a
-                      href="https://scholar.google.com/citations?user=sm2Y-6sAAAAJ&hl=en"> Dr. Yonggang Shi</a>.
-                    Previously, I had also worked with <a
-                      href="https://scholar.google.com/citations?hl=en&user=8EDHmYkAAAAJ&view_op=list_works&sortby=pubdate">Dr.
-                      Shri Narayanan</a>. As an undergraduate, I was fortunate enough to work with <a
-                      href="https://scholar.google.com/citations?user=rcF7N44AAAAJ&hl=en&oi=ao">Dr. Ren Hongliang</a>
-                    (NUS), <a href="https://scholar.google.com/citations?user=B_yn0m0AAAAJ&hl=en"> Dr. Prasanta Kumar
-                      Ghosh</a> (IISc), and <a href="https://scholar.google.com/citations?hl=en&user=VYAwEGUAAAAJ"> Dr.
-                      Aurobinda Routray</a> (IIT-Kharagpur).
-                  </p>
-
-                  <p>
-                    I have published at top-tier ML/computer vision/signal processing conferences such as <b>ICCV</b>,
-                    <b>NeurIPS(3x)</b>, <b>AAAI</b>, <b>ECCV</b>, and <b>ICASSP(2x)</b>.
-                  </p>
-
-                  <p>
-                    <strong><span style="color:red"> I'm happy to chat and discuss potential collaborations. Feel free
-                        to contact me.</span></strong>
-                  </p>
-
-                  <!-- <p>
-                <font color = 'green'> I'm constantly trying to push the frontiers of ML research by searching good ways to foster the development of important skills and "adaptively fine-tune and distill knowledge"  (slipped in a nerdy joke here haha). Join my "brand new" <a href="https://discord.gg/SGbjwU6Awv">Discord</a> server! 👉🏼👈🏻 </font>
-              </p> -->
-
-                  <p style="text-align:center">
-                    <a href="mailto:sarthakmaharana9811@gmail.com">Email</a> &nbsp/&nbsp
-                    <a href="data/Sarthak_CV.pdf">CV</a> &nbsp/&nbsp
-                    <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp/&nbsp -->
-                    <a href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&hl=en">Google Scholar</a>
-                    &nbsp/&nbsp
-                    <!-- <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp/&nbsp -->
-                    <a href="https://github.com/sarthaxxxxx/">GitHub</a> &nbsp/&nbsp
-                    <a href="https://www.linkedin.com/in/sarthak9811/">LinkedIn</a>
-                  </p>
-                </td>
-                <td style="padding:5px;width:50%;max-width:50%">
-                  <a href="images/self_3.jpg"><img loading="lazy" style="width:90%;max-width:100%" alt="profile photo"
-                      src="images/self_3.jpg" class="hoverZoomLink"></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:10px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                I'm interested in computer vision, machine learning, optimization, and image processing. Much of my research is about inferring the physical world (shape, motion, color, light, etc) from images. Representative papers are <span class="highlight">highlighted</span>.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-				 -->
-
-          </div>
-
-
-          <!-- Education -->
-          <!-- <button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-education" id="education"><heading>Education</heading></button>
-      <div id="content-experience" class="collapse in">
-			
-        <table border=0 class="bg_colour" style="padding:2px;width:100%;border:2px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto"><tbody>
-
-          <tr>
-              <td style="padding:10px;width:25%;vertical-align:middle">
-                  <div class="one">
-                      <img loading="lazy" src='images/utd.png' width="90" class="side-image">
-                  </div>
-              </td>
-              <td style="padding:1px;width:75%;vertical-align:top">
-                   <papertitle style="color:gray"><big>Software Development Engineer Intern</big> </papertitle> <papertitle ><big> | Expedia Group</big></papertitle> -->
-          <!-- <papertitle><big>University of Texas at Dallas</big></papertitle>
-                  <br>
-                  <papertitle style="color:green"><big>Doctor of Philosophy (PhD), </big></papertitle><papertitle><big>Computer Science</big></papertitle>
-                  <br>
-                </papertitle><papertitle><big>GPA - </big></papertitle> -->
-          <!-- <br>
-<i>Dallas, TX</i>
-                  <br>                              							    
-                  August 2023 - May 2027
-              </td>
-          </tr> -->
-          <!-- </tbody></table> -->
-
-          <!-- <table border=0 class="bg_colour" style="padding:2px;width:100%;border:0px;border-spacing:2px;border-collapse:separate;margin-right:auto;margin-left:auto"><tbody>
-
-        <tr>
-            <td style="padding:10px;width:25%;vertical-align:middle">
-                <div class="one">
-                    <img loading="lazy" src='images/USC-logo.png' width="90" class="side-image">
-                </div>
-            </td>
-            <td style="padding:1px;width:75%;vertical-align:top">
-                <<papertitle style="color:gray"><big>Software Development Engineer Intern</big> </papertitle> <papertitle ><big> | Expedia Group</big></papertitle> -->
-          <!-- <papertitle><big>University of Southern California</big></papertitle>
-                <br>
-                <papertitle style="color:green"><big>Master of Science (MS), </big></papertitle><papertitle><big>Electrical Engineering</big></papertitle>
-                <br>
-                <papertitle><big>GPA - 3.85/4</big></papertitle>
-                <br> -->
-          <!-- <i>Los Angeles, CA</i>
-<br>
-                August 2021 - May 2023
-            </td>
-        </tr>
-
-    </tbody></table>
-
-    <table border=0 class="bg_colour" style="padding:2px;width:100%;border:0px;border-spacing:2px;border-collapse:separate;margin-right:auto;margin-left:auto"><tbody>
-
-      <tr>
-          <td style="padding:10px;width:25%;vertical-align:middle">
-              <div class="one">
-                  <img loading="lazy" src='images/IIIT.png' width="90" class="side-image">
-              </div>
-          </td>
-          <td style="padding:1px;width:75%;vertical-align:top">
-              <papertitle style="color:gray"><big>Software Development Engineer Intern</big> </papertitle> <papertitle ><big> | Expedia Group</big></papertitle> -->
-          <!-- <papertitle><big>International Institute of Information Technology Bhubaneswar (IIIT-Bh)</big></papertitle>
-              <br>
-              <papertitle style="color:green"><big>Bachelor of Technology (BTech), </big></papertitle><papertitle><big>Electrical and Electronics Engineering</big></papertitle>
-              <br>
-              <papertitle><big>GPA - 8.32/10</big></papertitle>
-              <br> -->
-          <!-- <i>Bhubaneswar, India</i>
-<br>
-              August 2016 - June 2020
-          </td> -->
-          <!-- </tr> -->
-
-          <!-- </tbody></table> -->
-
-          </div>
-
-
-          <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-            class="collapsible" data-toggle="collapse" data-target="#content-education" id="education">
-            <heading>News</heading>
-          </button>
-          <div id="content-experience" class="collapse in">
-            <!-- <div class="scroll">  -->
-
-            <table border=0 class="bg_colour"
-              style="padding:2px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Oct '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Gave a talk at the <a href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html"> MCL
-                      workshop </a> @ ICCV 2025.
-                  </td>
-                </tr>
-
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Sep '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    <a href="https://arxiv.org/abs/2506.00358">AVROBUSTBENCH</a> has been accepted to NeurIPS (D&B)
-                    2025! See you in San Diego, CA! 🏖️🌮
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Aug '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Received a travel grant from the ICCV community!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">June '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    <a href="https://arxiv.org/abs/2412.02837">BATCLIP</a> has been accepted to ICCV 2025. See you in
-                    the gorgeous Hawai'i! 🌴
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">May '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    We're organizing the <a href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html">1st
-                      Workshop on Multimodal Continual Learning</a> at ICCV 2025!
-                  </td>
-                </tr>
-
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">May '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Crushed my quals — officially a PhD candidate now!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Mar '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Excited to be co-organizing the <a href="https://tta-icml2025.github.io/">2nd Workshop on Test-Time
-                      Adaptation: Putting Updates to the Test at ICML 2025</a>!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Feb '25 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    This summer, I'll be joining Dolby Laboratories as a PhD Research Intern!
-                  </td>
-                </tr>
-
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Dec '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    <a href="https://arxiv.org/abs/2403.10650v2">PALM</a> has been accepted to AAAI 2025 for an
-                    <strong><span style="color:red">Oral</span></strong> presentation!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Nov '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Serving as a <a href="https://cvpr.thecvf.com/">CVPR 2025</a> reviewer.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Oct '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Variational Diffusion Unlearning (VDU) is accepted to the NeurIPS SafeGenAI workshop 2024!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Sep '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Our paper on submodular optimization for active 3D object detection has been accepted to NeurIPS
-                    2024!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Aug '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Serving as a reviewer for <a href="https://iclr.cc/Conferences/2025">ICLR 2025</a>.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Jul '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Our paper on <a href="https://arxiv.org/abs/2403.10663">DNN watermarking</a> has been accepted to
-                    ECCV 2024!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">May '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Serving as a reviewer for <a href="https://bmvc2024.org/">BMVC 2024</a>.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Mar '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Serving as a reviewer for <a href="https://tta-cvpr2024.github.io/">CVPR 2024 Workshop on Test-Time
-                      Adaptation: Model, Adapt Thyself! (MAT)</a>.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Feb '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Serving as a reviewer for <a href="https://eccv.ecva.net/">ECCV 2024</a>.
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Jan '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    Our paper on SSL features for dysarthric speech has been accepted to the SASB workshop @ ICASSP
-                    2024!
-                  </td>
-                </tr>
-
-                <tr>
-                  <td style="vertical-align:top;width:15%">
-                    <p style="color:green; display:inline">Jan '24 &nbsp</p>
-                  </td>
-                  <td style="vertical-align:top">
-                    I am glad to be selected to attend the <a href="https://www.oxfordml.school/">MLx Representation
-                      Learning and Generative AI Oxford Summer School</a>.
-                  </td>
-                </tr>
-
-                <!-- <tr>
-                    <td>
-                        <p style="color:green; display:inline">Aug '23 &nbsp</p>
-                    </td>
-                    <td>
-                    Started PhD @ UTD!
-                    </td>
-                </tr>
-
-                  <tr>
-                    <td>
-                        <p style="color:green; display:inline">May '23 &nbsp</p>
-                    </td>
-                    <td>
-                    Graduated from USC with an MS in Electrical Engineering!
-                    </td>
-                </tr>
-      
-                  <tr>
-                        <td>
-                            <p style="color:green; display:inline">Mar '23 &nbsp</p>
-                        </td>
-                        <td>
-				Accepted the CS PhD offer from UTD!
-                        </td>
-                    </tr>
-                  
-                  <tr>
-                      <td>
-                          <p style="color:green; display:inline">Aug '21 &nbsp</p>
-                      </td>
-                      <td>
-                          Started MS in Electrical Engineering at USC!
-                      </td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <p style="color:green; display:inline">June '21 &nbsp</p>
-                    </td>
-                    <td>
-                      Virtually presented the paper on acoustic-to-articulatory inversion of dysarthric speech at IEEE ICASSP 2021.
-                    </td>
-                  </tr>
-			
-			<tr>
-                        <td>
-                            <p style="color:green; display:inline">Mar '21 &nbsp</p>
-                        </td>
-                        <td>
-			Our paper on <a href="https://ieeexplore.ieee.org/document/9413625">acoustic-to-articulatory inversion using cross-corpus data</a> was accepted to IEEE ICASSP 2021!
-                        </td>
-                    </tr>	
-
-			
-			<tr>
-                        <td>
-                            <p style="color:green; display:inline">Jun '20 &nbsp</p>
-                        </td>
-                        <td>
-				Graduated from IIIT-Bh with a BTech (Honors) in Electrical and Electronics Engineering.
-                        </td>
-                    </tr> -->
-
-                <!--                     <tr>
-                      <td>
-                          <p style="color:green; display:inline">Nov '19 &nbsp</p>
-                      </td>
-                      <td>
-      A paper on harmonic analysis of a PV hysteresis current control inverted got accepted to IEEE ICSSIT 2019!
-                      </td>
-                  </tr> -->
-
-
-              </tbody>
-            </table>
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!--  -->
-
-          </div>
-
-          <div id="content-experience" class="collapse in">
-            <table border=0 class="bg_colour"
-              style="padding:10px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto">
-              <tbody>
-
-
-                <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-                  class="collapsible" data-toggle="collapse" data-target="#content-education" id="education">
-                  <heading>Publications / Preprints</heading>
-                </button>
-                <div id="content-experience" class="collapse in">
-                  <!-- <table border=0 class="bg_colour" style="padding:10px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto"><tbody>
-                   <tr>
-                    <ul>
-                      <li>I'm primarily interested in human-centered AI, which includes multi-modal machine learning with applications to speech and medical images. On the whole, my interests lie in self-supervised learning, video representation learning, generative models, etc.</li>
-                  </td>
-                  </tr>
-                  </tbody>
-                </table> -->
-                  <!-- <tr>
-                    <td style="padding:1px;width:75%;vertical-align:middle">
-                      <p>
-                        First author works are <span class="highlight">highlighted</span>.
-                      </p>
-                    </td> -->
-
-                  <div class="publication-list">
-                    <!-- AVROBUSTBENCH -->
-                    <div class="publication-item highlight-row" onmouseout="nerfbake_stop()"
-                      onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/av_robust.png"><img loading="lazy"
-                                style="width:120%;max-width:120%;height:90%;" alt="" src="images/av_robust.png"
-                                class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>AVROBUSTBENCH: Benchmarking the Robustness of Audio-Visual Recognition Models at
-                            Test-Time</papertitle>
-                        </a>
-                        <br>
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        <a href="https://sakshamsingh1.github.io/">Saksham Singh Kushwaha</a>,
-                        <a href="https://www.linkedin.com/in/baoming-zhang-286083313/">Baoming Zhang</a>,
-                        <a href="https://axr2718.github.io/">Adrian Rodriguez</a>,
-                        <a href="https://www.linkedin.com/in/songtao-wei/">Songtao Wei</a>,
-                        <a href="https://www.yapengtian.com/">Yapeng Tian</a>,
-                        <a href="https://yunhuiguo.github.io/">Yunhui Guo</a>
-                        <br>
-                        <em>In NeurIPS (Datasets and Benchmarks) 2025</em><br>
-                        <br>
-                        <a href="https://arxiv.org/abs/2506.00358">[Paper]</a>
-                        <a href="https://github.com/sarthaxxxxx/AVROBUSTBENCH">[Code]</a>
-                        <a href="https://sarthaxxxxx.github.io/AVROBUSTBENCH/index.html">[Project Page]</a>
-                        <a href="https://huggingface.co/datasets/sakshamsingh1/av_robust_data/tree/main">[Datasets]</a>
-                        <a href="https://www.youtube.com/watch?v=hYdcRO3BuIY&ab_channel=SarthakMaharana">[Demo]</a>
-                        <br>
-                        <p>A comprehensive benchmark designed to evaluate the test-time robustness of audio-visual
-                          recognition models.</p>
-                      </div>
-                    </div>
-
-                    <!-- SELECT -->
-                    <div class="publication-item" onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/select.png"><img loading="lazy"
-                                style="width:110%;max-width:150%;height:80%;" alt="" src="images/select.png"
-                                class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>SELECT: A Submodular Approach for Active LiDAR Semantic Segmentation
-                          </papertitle>
-                        </a>
-                        <br>
-                        Ruiyu Mao,
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        Xulong Tang,
-                        <a href="https://yunhuiguo.github.io/">Yunhui Guo</a>
-                        <br>
-                        <em>Under Review</em><br>
-                        <br>
-                        <a href="https://arxiv.org/abs/2505.11516">[arXiv]</a>
-                        <br>
-                        <p>A voxel-centric submodular approach tailored for active LiDAR semantic segmentation.
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- BATCLIP -->
-                    <div class="publication-item highlight-row" onmouseout="nerfbake_stop()"
-                      onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/framework_v3_skm_page-0001.jpg"><img
-                                style="width:120%;max-width:120%;height:90%;" alt=""
-                                src="images/framework_v3_skm_page-0001.jpg" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>BATCLIP: Bimodal Online Test-Time Adaptation for CLIP</papertitle>
-                        </a>
-                        <br>
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        Baoming Zhang,
-                        <a href="https://scholar.google.com/citations?user=WbO7tjYAAAAJ&hl=en">Leonid
-                          Karlinsky</a>,
-                        <a href="https://www.rogerioferis.org/">Rogerio Feris</a>,
-                        <a href="https://yunhuiguo.github.io/">Yunhui Guo</a>
-                        <br>
-                        <em>In ICCV 2025</em><br>
-                        <br>
-                        <a href="https://arxiv.org/abs/2412.02837">[Paper]</a>
-                        <a href="https://sarthaxxxxx.github.io/BATCLIP/index.html">[Project Page]</a>
-                        <a href="https://github.com/sarthaxxxxx/BATCLIP">[Code]</a>
-                        <a href="BATCLIP/static/pdfs/poster_final.pdf">[Poster]</a>
-                        <a href="https://www.youtube.com/watch?v=k0TfP6oDGxs">[Presentation]</a>
-                        <br>
-                        <p>Bimodal online test-time adaptation method to improve CLIP's robustness to common
-                          corruptions. Also extends to domain generalization settings.</p>
-                      </div>
-                    </div>
-
-                    <!-- PALM -->
-                    <div class="publication-item highlight-row" onmouseout="nerfbake_stop()"
-                      onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/PALM07.png"><img style="width:120%;max-width:120%;height:90%;" alt=""
-                                src="images/PALM07.png" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>PALM: Pushing Adaptive Learning Rate Mechanisms for Continual
-                            Test-Time Adaptation</papertitle>
-                        </a>
-                        <br>
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        Baoming Zhang,
-                        <a href="https://yunhuiguo.github.io/">Yunhui Guo</a>
-                        <br>
-                        <em>In AAAI 2025 </em> <strong><span style="color:red">(Oral)</span></strong><br>
-                        <br>
-                        <a href="https://arxiv.org/abs/2403.10650">[Paper]</a>
-                        <a href="https://sarthaxxxxx.github.io/PALM/index.html">[Project Page]</a>
-                        <a href="https://github.com/sarthaxxxxx/PALM">[Code]</a>
-                        <a href="PALM/static/pdfs/AAAI25_Poster_New.pdf">[Poster]</a>
-
-                        <br>
-                        <p></p>
-                        <p>Adaptive learning rate continual test-time adaptation method based on model
-                          prediction uncertainty and parameter sensitivity to rapid distributional
-                          shifts. </p>
-                      </div>
-                    </div>
-
-                    <!-- VDU -->
-                    <div class="publication-item" onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/VDU.drawio.png"><img style="width:110%;max-width:150%;height:80%;" alt=""
-                                src="images/VDU.drawio.png" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>Variational Diffusion Unlearning: A Variational Inference
-                            Framework for Unlearning in Diffusion Models</papertitle>
-                        </a>
-                        <br>
-                        <a href="https://subhodip123.github.io/">Subhodip Panda</a>,
-                        MS Varun, Shreyans Jain,
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        <a href="https://sites.google.com/view/prathosh/home">Prathosh AP</a>
-                        <br>
-                        <em>In NeurIPS Safe Generative AI Workshop 2024</em> <br>
-                        <br>
-                        <a href="https://openreview.net/forum?id=B2wDjiED9V">[Paper]</a>
-                        <br>
-                        <p>
-                          Machine unlearning of user-specific classes/concepts in pre-trained
-                          diffusion models (DDPMs).
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- STONE -->
-                    <div class="publication-item" onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/stone.png"><img style="width:110%;max-width:150%;height:80%;" alt=""
-                                src="images/stone.png" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>STONE: A Submodular Optimization Framework for Active 3D
-                            Object Detection</papertitle>
-                        </a>
-                        <br>
-                        Ruiyu Mao,
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        <a href="https://sites.google.com/view/rishabhiyer/">Rishabh K Iyer</a>,
-                        <a href="https://yunhuiguo.github.io/">Yunhui Guo</a>
-                        <br>
-                        <em>In NeurIPS 2024</em><br>
-                        <br>
-                        <a href="https://arxiv.org/abs/2410.03918">[Paper]</a>
-                        <a href="https://github.com/RuiyuM/STONE">[Code]</a>
-                        <br>
-                        <p>
-                          A submodular optimization scheme to handle data imbalance and label
-                          distributional coverage for active 3D object detection.
-                        </p>
-                      </div>
-                    </div>
-
-
-                    <!-- MAT -->
-                    <div class="publication-item" onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/pipeline.png"><img style="width:110%;max-width:110%;height:75%;" alt=""
-                                src="images/pipeline.png" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>Not Just Change the Labels, Learn the Features:
-                            Watermarking Deep Neural Networks with Multi-View Data
-                          </papertitle>
-                        </a>
-                        <br>
-                        Yuxuan Li,
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        <a href="https://yunhuiguo.github.io/">Yunhui Guo</a>
-                        <br>
-                        <em>In ECCV 2024</em><br>
-                        <br>
-                        <a href="https://arxiv.org/abs/2403.10663">[Paper]</a>
-                        <a href="https://github.com/liyuxuan-github/MAT">[Code]</a>
-                        <br>
-                        <p>
-                          Novel watermarking technique based on multi-view data for
-                          defending against model extraction attacks.
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- SASB -->
-                    <div class="publication-item highlight-row" onmouseout="nerfbake_stop()"
-                      onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/tSNE_each_sub1.png"><img style="width:110%;max-width:130%;height:85%;"
-                                alt="" src="images/tSNE_each_sub1.png" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>Acoustic-to-Articulatory Inversion for Dysarthric
-                            Speech: Are Pre-Trained Self-Supervised Representations
-                            Favorable?
-                          </papertitle>
-                        </a>
-                        <br>
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        <a href="https://www.linkedin.com/in/krishna-kamal">Krishna
-                          Kamal Adidam</a>,
-                        <a href='https://www.linkedin.com/in/shoumik-nandi-766b82175'>Shoumik
-                          Nandi</a>,
-                        <a href="https://www.ajitesh-srivastava.com/">Ajitesh
-                          Srivastava</a>
-                        <br>
-                        <em>In ICASSP 2024 Workshop on Self-supervision in Audio,
-                          Speech, and Beyond (SASB) 2024</em><br>
-                        <br>
-                        <a href="https://arxiv.org/abs/2309.01108">[Paper]</a>
-                        <a
-                          href="https://drive.google.com/file/d/1TpzYqzfHYSTpwdl0qwG2sZdMtFKhQQj0/view?usp=drive_link">[Poster]</a>
-                        <br>
-                        <p>
-                          Effectiveness of pre-trained self-supervised learning
-                          representations for acoustic-to-articulatory inversion of
-                          dysarthric speech.
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- ICASSP 2021 -->
-                    <div class="publication-item highlight-row" onmouseout="nerfbake_stop()"
-                      onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/icassp.png"><img style="width:110%;max-width:110%;height:75%;" alt=""
-                                src="images/icassp.png" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>Acoustic-to-Articulatory Inversion for
-                            Dysarthric Speech by Using Cross-Corpus
-                            Acoustic-Articulatory Data</papertitle>
-                        </a>
-                        <br>
-                        <strong>Sarthak Kumar Maharana</strong>,
-                        <a href="https://in.linkedin.com/in/aravind-illa-13a84658">Aravind
-                          Illa</a>,
-                        <a href='https://www.linkedin.com/in/renuka-mannem-17686617a'>Renuka
-                          Mannem</a>,
-                        Yamini Bellur, Veeramani Preethish Kumar, Seena Vengalil,
-                        Kiran Polavarapu, Nalini Atchayaram,
-                        <a href="https://scholar.google.com/citations?hl=en&user=B_yn0m0AAAAJ&view_op=list_works">Prasanta
-                          Kumar Ghosh</a>
-                        <br>
-                        <em>In ICASSP 2021</em><br>
-                        <br>
-                        <a
-                          href="https://scholar.googleusercontent.com/scholar.bib?q=info:qks0yUjnpGsJ:scholar.google.com/&output=citation&scisdr=ClGT-4YPEMLP2VuiMZQ:AFWwaeYAAAAAZPqkKZS7Nl0vfUdvI_i5NHipe2c&scisig=AFWwaeYAAAAAZPqkKdQi3i0lt4hyyM-OJYM07LA&scisf=4&ct=citation&cd=-1&hl=en">[BibTeX]</a>
-                        <a href="https://ieeexplore.ieee.org/document/9413625">[Paper]</a>
-                        <a href="https://github.com/sarthaxxxxx/AAI-ALS">[Code]</a>
-                        <a
-                          href="https://drive.google.com/file/d/1Oj19XvG26dIKCfwjDhqt0rrEnfbVrwFK/view?usp=sharing">[Video]</a>
-                        <br>
-                        <p>
-                          Joint and multi-corpus training for
-                          acoustic-to-articulatory inversion of dysarthric speech,
-                          using x-vectors, at low-resource data conditions.
-                        </p>
-                      </div>
-                    </div>
-
-
-                    <!-- Harmonics -->
-                    <div class="publication-item" onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
-                      <div class="pub-image">
-                        <div class="one">
-                          <div class="two">
-                            <a href="images/powergui.png"><img style="width:110%;max-width:110%;height:90%;" alt=""
-                                src="images/powergui.png" class="hoverZoomLink"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pub-content">
-                        <a href="">
-                          <papertitle>Harmonics analysis of a PV integrated
-                            hysteresis current control inverter connected with
-                            grid and without grid</papertitle>
-                        </a>
-                        <br>
-                        Jayanta Kumar Sahu, Sudhakar Sahu, J.P Patra,
-                        <strong>Sarthak Kumar Maharana</strong>, Bhagabat Panda
-                        <br>
-                        <em>In ICSSIT 2019</em><br>
-                        <br>
-                        <a
-                          href="https://scholar.googleusercontent.com/scholar.bib?q=info:DOqHloR39YQJ:scholar.google.com/&output=citation&scisdr=ClGT-4YPEMLP2Vulqxw:AFWwaeYAAAAAZPqjsxwWTw5uzNsKkYxdbxISbYE&scisig=AFWwaeYAAAAAZPqjsyr7R9lqiNlL3vb_zKrtG4I&scisf=4&ct=citation&cd=-1&hl=en">[BibTeX]</a>
-                        <a href="https://ieeexplore.ieee.org/abstract/document/8987864">[Paper]</a>
-                        <br>
-                        <p>
-                          Harmonics analysis of a PV integrated hysteresis
-                          current control inverter connected with grid and
-                          without grid.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-                  <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-                    class="collapsible" data-toggle="collapse" data-target="#content-education" id="education">
-                    <heading>Academic/Volunteer Work</heading>
-                  </button>
-                  <div id="content-experience" class="collapse in">
-                    <table border=0 class="bg_colour"
-                      style="padding:10px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto">
-                      <tbody>
-                        <tr>
-                          <ul>
-                            <li> Research Advisor - <a href="https://cairatutd.github.io/">CAIR@UTD</a>.</li>
-                            <li>Workshop Co-organizer: <a href="https://tta-icml2025.github.io/#">2nd Workshop on
-                                Test-Time Adaptation: Putting Updates to the Test</a> @ ICML 2025, <a
-                                href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html">1st Workshop
-                                on
-                                Multimodal Continual Learning</a> @ ICCV 2025.
-                            <li>Reviewer - CVPR 2025, ICLR 2025, NeurIPS Workshops 2024, BMVC 2024, ECCV 2024, CVPR
-                              Workshops 2024, AAAI 2024 </li>
-                            <!-- <li>Building <a href="https://cordai.org/">CORD.ai</a>, a deep learning research community, as
-                            a core member and volunteer researcher. </li> -->
-                            <!-- <li>Course Mentor/Grader for graduate level EE 541: An Introduction to Deep Learning (Spring 2022).</li>
-                <li>USC IEEE Graduate Society - Member, strengthen academic and social growth of the members, and host workshops.</li>
-                <li>PyCon India 2020 - Content writer for social media handles, helped the promotions team to reach out to organizations and colleges, and interacted
-                  with individuals who have contributed to the language, and also worked on creating virtual swags.</li> -->
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <button style="border:0px transparent; background-color: transparent;outline:none;" type="button" class="collapsible"
-    data-toggle="collapse" data-target="#content-education" id="education">
-    <heading>Miscellaneous</heading>
-  </button>
-  <div id="content-experience" class="collapse in">
-    <table border=0 class="bg_colour"
-      style="padding:10px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto">
-      <tbody>
-        <tr>
-          <ul>
-            <li>I'm a cis male.</li>
-            <li>I consider myself lucky to have grown up in two beautiful cities in India - Bangalore and Bhubaneswar,
-              which have infused in me a lot of character and development. I've also spent two quality years in the
-              vibrant, diverse, gently warm, and sprawling city of Los Angeles, California. Absolutely look forward to
-              staying in new places and experiencing different cultures.</li>
-            <li>I'm a HUGE fan of the classical formats of cricket. You'd often find me watching old test match
-              highlights or SRT straight drives. Nothing can get more sublime than that. I bet! I don't consider IPL/T20
-              cricket as a thing AT ALL.</li>
-            <li>I think mobile photography is like a side gig for me? My phone instantly comes out the moment my eyes
-              catch sight of a beautiful view.</li>
-            <li>I also spend a lot of time on quality humor, specifically dark humor. We could talk about that later.
-            </li>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
-
-    <table
-      style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-      <tbody>
-        <tr>
-          <td style="padding:1px">
-            <br>
-            <p style="text-align:right;font-size:small;">
-              <a href="https://github.com/jonbarron/jonbarron_website">Source code</a> by Jon Barron.
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    </td>
-    </tr>
-    </table>
-
-    <a href="https://mapmyvisitors.com/web/1by3y" title="Visit tracker"><img
-        src="https://mapmyvisitors.com/map.png?d=5JO4WNL-1FJyq3Djg9E5eW6jP6eHh2nC7Qwu12OZjUg&cl=ffffff" /></a>
-
-    <script src="script.js"></script>
+  <div class="header">
+    <div class="container">
+      <div class="content-div"></div>
+      <div class="row align-items-center">
+        <div class="col-md-3 align-column-center">
+          <center>
+            <img class="img-fluid" src="images/self_3.jpg" style="border-radius:20px; border:1px; margin-bottom: 5px"
+              width="85%" alt="Sarthak Kumar Maharana">
+          </center>
+        </div>
+        <div class="col-md-9 align-column-center">
+          <h2> Sarthak Kumar Maharana </h2>
+          Email: sarthakmaharana9811@gmail.com<br>
+          <a href="data/Sarthak_CV.pdf"> CV </a> &
+          <a href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&hl=en" target="_blank"> Google Scholar </a> &
+          <a href="https://github.com/sarthaxxxxx/" target="_blank"> GitHub </a> &
+          <a href="https://www.linkedin.com/in/sarthak9811/" target="_blank"> LinkedIn </a>
+
+          <div class="small-div"></div>
+
+          <p>
+            I'm a "third-year" CS PhD candidate at the University of Texas at Dallas (UTD), advised by <a
+              href="https://yunhuiguo.github.io/">Dr. Yunhui Guo</a>.
+            I'm also a part of the <a href="https://deil-lab-utd.github.io/">Data Efficient Intelligent Learning
+              Lab</a>.
+            Before this, I obtained a Master of Science in Electrical Engineering from the University of Southern
+            California (USC) and
+            a
+            Bachelor's degree from IIIT Bhubaneswar (IIIT-Bh), India.
+          </p>
+
+          <p>
+            My research primarily lies in <b>computer vision</b>, where I study <b>continual learning</b> i.e., how
+            modern models can accumulate knowledge over time at test-time, while remaining robust and adaptable in open
+            and dynamic environments. This is increasingly critical in today’s AI landscape, where deployed systems need
+            to be more sample and compute efficient.
+          </p>
+
+
+          <p>
+            During my Masters, I closely worked with <a
+              href="https://scholar.google.com/citations?user=sm2Y-6sAAAAJ&hl=en"> Dr. Yonggang Shi</a>.
+            Previously, I had also worked with <a
+              href="https://scholar.google.com/citations?hl=en&user=8EDHmYkAAAAJ&view_op=list_works&sortby=pubdate">Dr.
+              Shri Narayanan</a>.
+            As an undergraduate, I was fortunate enough to work with <a
+              href="https://scholar.google.com/citations?user=rcF7N44AAAAJ&hl=en&oi=ao">Dr. Ren Hongliang</a> (NUS),
+            <a href="https://scholar.google.com/citations?user=B_yn0m0AAAAJ&hl=en"> Dr. Prasanta Kumar Ghosh</a> (IISc),
+            and
+            <a href="https://scholar.google.com/citations?hl=en&user=VYAwEGUAAAAJ"> Dr. Aurobinda Routray</a>
+            (IIT-Kharagpur).
+          </p>
+
+          <p>
+            I have published at top-tier ML/computer vision/signal processing conferences such as <b>ICCV</b>,
+            <b>NeurIPS(3x)</b>, <b>AAAI</b>, <b>ECCV</b>, and <b>ICASSP(2x)</b>.
+          </p>
+
+          <p>
+            <strong><span style="color:red"> I'm happy to chat and discuss potential collaborations. Feel free to
+                contact me.</span></strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3> News </h3>
+    <ul id="activity-list">
+      <li>
+        <span style="color:green">Oct '25</span> Gave a talk at the <a
+          href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html"> MCL workshop </a> @ ICCV 2025.
+      </li>
+      <li>
+        <span style="color:green">Sep '25</span> <a href="https://arxiv.org/abs/2506.00358">AVROBUSTBENCH</a> has been
+        accepted to NeurIPS (D&B) 2025! See you in San Diego, CA! 🏖️🌮
+      </li>
+      <li>
+        <span style="color:green">Aug '25</span> Received a travel grant from the ICCV community!
+      </li>
+      <li>
+        <span style="color:green">June '25</span> <a href="https://arxiv.org/abs/2412.02837">BATCLIP</a> has been
+        accepted to ICCV 2025. See you in the gorgeous Hawai'i! 🌴
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">May '25</span> We're organizing the <a
+          href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html">1st Workshop on Multimodal Continual
+          Learning</a> at ICCV 2025!
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">May '25</span> Crushed my quals — officially a PhD candidate now!
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Mar '25</span> Excited to be co-organizing the <a
+          href="https://tta-icml2025.github.io/">2nd Workshop on Test-Time Adaptation: Putting Updates to the Test at
+          ICML 2025</a>!
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Feb '25</span> This summer, I'll be joining Dolby Laboratories as a PhD Research
+        Intern!
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Dec '24</span> <a href="https://arxiv.org/abs/2403.10650v2">PALM</a> has been accepted
+        to AAAI 2025 for an <strong><span style="color:red">Oral</span></strong> presentation!
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Nov '24</span> Serving as a <a href="https://cvpr.thecvf.com/">CVPR 2025</a> reviewer.
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Oct '24</span> Variational Diffusion Unlearning (VDU) is accepted to the NeurIPS
+        SafeGenAI workshop 2024!
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Sep '24</span> Our paper on submodular optimization for active 3D object detection has
+        been accepted to NeurIPS 2024!
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Aug '24</span> Serving as a reviewer for <a
+          href="https://iclr.cc/Conferences/2025">ICLR 2025</a>.
+      </li>
+      <li class="toggle-item">
+        <span style="color:green">Jul '24</span> Our paper on <a href="https://arxiv.org/abs/2403.10663">DNN
+          watermarking</a> has been accepted to ECCV 2024!
+      </li>
+      <li class="no-bullet" id="toggle-li">
+        <a href="javascript:void(0)" id="toggle-button" onclick="toggleActivities()">Show more...</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h3> Papers <font size="3" style="font-weight:normal">(Preprints included)</font>
+    </h3>
+    <div class="small-div"></div>
+
+    <!-- AVROBUSTBENCH -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/av_robust.png" style="border-radius:10px; width: 100%;"
+            alt="AVROBUSTBENCH">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>AVROBUSTBENCH: Benchmarking the Robustness of Audio-Visual Recognition Models at
+            Test-Time</b></font><br>
+        <div class="authors">
+          <b>Sarthak Kumar Maharana</b>,
+          <a href="https://sakshamsingh1.github.io/" target="_blank">Saksham Singh Kushwaha</a>,
+          <a href="https://www.linkedin.com/in/baoming-zhang-286083313/" target="_blank">Baoming Zhang</a>,
+          <a href="https://axr2718.github.io/" target="_blank">Adrian Rodriguez</a>,
+          <a href="https://www.linkedin.com/in/songtao-wei/" target="_blank">Songtao Wei</a>,
+          <a href="https://www.yapengtian.com/" target="_blank">Yapeng Tian</a>,
+          <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo</a>
+        </div>
+        In NeurIPS (Datasets and Benchmarks), 2025
+        <div class="link-badges">
+          <a href="https://arxiv.org/abs/2506.00358" class="badge" target="_blank"><i class="fas fa-book"></i>Paper</a>
+          <a href="https://github.com/sarthaxxxxx/AVROBUSTBENCH" class="badge" target="_blank"><i
+              class="fa-brands fa-github"></i>Code</a>
+          <a href="https://sarthaxxxxx.github.io/AVROBUSTBENCH/index.html" class="badge" target="_blank"><i
+              class="fas fa-globe"></i>Project Page</a>
+          <a href="https://huggingface.co/datasets/sakshamsingh1/av_robust_data/tree/main" class="badge"
+            target="_blank"><i class="fas fa-database"></i>Datasets</a>
+          <a href="https://www.youtube.com/watch?v=hYdcRO3BuIY&ab_channel=SarthakMaharana" class="badge"
+            target="_blank"><i class="fas fa-video"></i>Demo</a>
+        </div>
+        <p style="margin-top: 5px;">A comprehensive benchmark designed to evaluate the test-time robustness of
+          audio-visual models. We hope this will drive future research on robust, adaptable audio-visual systems in
+          real-world settings.</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- SELECT -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/select.png" style="border-radius:10px; width: 100%;" alt="SELECT">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>SELECT: A Submodular Approach for Active LiDAR Semantic Segmentation</b></font><br>
+        <div class="authors">
+          Ruiyu Mao,
+          <b>Sarthak Kumar Maharana</b>,
+          Xulong Tang,
+          <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo</a>
+        </div>
+        Under Review
+        <div class="link-badges">
+          <a href="https://arxiv.org/abs/2505.11516" class="badge" target="_blank"><i class="fas fa-book"></i>arXiv</a>
+        </div>
+        <p style="margin-top: 5px;">A voxel-centric submodular approach tailored for active LiDAR semantic segmentation.
+        </p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- BATCLIP -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/framework_v3_skm_page-0001.jpg" style="border-radius:10px; width: 100%;"
+            alt="BATCLIP">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>BATCLIP: Bimodal Online Test-Time Adaptation for CLIP</b></font><br>
+        <div class="authors">
+          <b>Sarthak Kumar Maharana</b>,
+          Baoming Zhang,
+          <a href="https://scholar.google.com/citations?user=WbO7tjYAAAAJ&hl=en" target="_blank">Leonid Karlinsky</a>,
+          <a href="https://www.rogerioferis.org/" target="_blank">Rogerio Schmidt Feris</a>,
+          <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo</a>
+        </div>
+        In ICCV, 2025
+        <div class="link-badges">
+          <a href="https://arxiv.org/abs/2412.02837" class="badge" target="_blank"><i class="fas fa-book"></i>Paper</a>
+          <a href="https://sarthaxxxxx.github.io/BATCLIP/index.html" class="badge" target="_blank"><i
+              class="fas fa-globe"></i>Project Page</a>
+          <a href="https://github.com/sarthaxxxxx/BATCLIP" class="badge" target="_blank"><i
+              class="fa-brands fa-github"></i>Code</a>
+          <a href="BATCLIP/static/pdfs/poster_final.pdf" class="badge" target="_blank"><i
+              class="fas fa-file-pdf"></i>Poster</a>
+          <a href="https://www.youtube.com/watch?v=k0TfP6oDGxs" class="badge" target="_blank"><i
+              class="fas fa-video"></i>Presentation</a>
+        </div>
+        <p style="margin-top: 5px;">Bimodal online test-time adaptation method to improve CLIP's robustness to common
+          corruptions. Also extends to domain generalization settings.</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- PALM -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/PALM07.png" style="border-radius:10px; width: 100%;" alt="PALM">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>PALM: Pushing Adaptive Learning Rate Mechanisms for Continual Test-Time Adaptation</b></font>
+        <br>
+        <div class="authors">
+          <b>Sarthak Kumar Maharana</b>,
+          Baoming Zhang,
+          <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo</a>
+        </div>
+        In AAAI, 2025 <font color="red"><b>(Oral)</b></font>
+        <div class="link-badges">
+          <a href="https://arxiv.org/abs/2403.10650" class="badge" target="_blank"><i class="fas fa-book"></i>Paper</a>
+          <a href="https://sarthaxxxxx.github.io/PALM/index.html" class="badge" target="_blank"><i
+              class="fas fa-globe"></i>Project Page</a>
+          <a href="https://github.com/sarthaxxxxx/PALM" class="badge" target="_blank"><i
+              class="fa-brands fa-github"></i>Code</a>
+          <a href="PALM/static/pdfs/AAAI25_Poster_New.pdf" class="badge" target="_blank"><i
+              class="fas fa-file-pdf"></i>Poster</a>
+        </div>
+        <p style="margin-top: 5px;">Adaptive learning rate continual test-time adaptation method based on model
+          prediction uncertainty and parameter sensitivity to rapid distributional shifts.</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- VDU -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/VDU.drawio.png" style="border-radius:10px; width: 100%;" alt="VDU">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>Variational Diffusion Unlearning: A Variational Inference Framework for Unlearning in
+            Diffusion Models</b></font><br>
+        <div class="authors">
+          <a href="https://subhodip123.github.io/" target="_blank">Subhodip Panda</a>,
+          MS Varun, Shreyans Jain,
+          <b>Sarthak Kumar Maharana</b>,
+          <a href="https://sites.google.com/view/prathosh/home" target="_blank">Prathosh AP</a>
+        </div>
+        In NeurIPS Safe Generative AI Workshop, 2024
+        <div class="link-badges">
+          <a href="https://openreview.net/forum?id=B2wDjiED9V" class="badge" target="_blank"><i
+              class="fas fa-book"></i>Paper</a>
+        </div>
+        <p style="margin-top: 5px;">Machine unlearning of user-specific classes/concepts in pre-trained diffusion models
+          (DDPMs).</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- STONE -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/stone.png" style="border-radius:10px; width: 100%;" alt="STONE">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>STONE: A Submodular Optimization Framework for Active 3D Object Detection</b></font><br>
+        <div class="authors">
+          Ruiyu Mao,
+          <b>Sarthak Kumar Maharana</b>,
+          <a href="https://sites.google.com/view/rishabhiyer/" target="_blank">Rishabh K Iyer</a>,
+          <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo</a>
+        </div>
+        In NeurIPS, 2024
+        <div class="link-badges">
+          <a href="https://arxiv.org/abs/2410.03918" class="badge" target="_blank"><i class="fas fa-book"></i>Paper</a>
+          <a href="https://github.com/RuiyuM/STONE" class="badge" target="_blank"><i
+              class="fa-brands fa-github"></i>Code</a>
+        </div>
+        <p style="margin-top: 5px;">A submodular optimization scheme to handle data imbalance and label distributional
+          coverage for active 3D object detection.</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- MAT -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/pipeline.png" style="border-radius:10px; width: 100%;" alt="MAT">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>Not Just Change the Labels, Learn the Features: Watermarking Deep Neural Networks with
+            Multi-View Data</b></font><br>
+        <div class="authors">
+          Yuxuan Li,
+          <b>Sarthak Kumar Maharana</b>,
+          <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo</a>
+        </div>
+        In ECCV, 2024
+        <div class="link-badges">
+          <a href="https://arxiv.org/abs/2403.10663" class="badge" target="_blank"><i class="fas fa-book"></i>Paper</a>
+          <a href="https://github.com/liyuxuan-github/MAT" class="badge" target="_blank"><i
+              class="fa-brands fa-github"></i>Code</a>
+        </div>
+        <p style="margin-top: 5px;">Novel watermarking technique based on multi-view data for defending against model
+          extraction attacks.</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- SASB -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/tSNE_each_sub1.png" style="border-radius:10px; width: 100%;" alt="SASB">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>Acoustic-to-Articulatory Inversion for Dysarthric Speech: Are Pre-Trained Self-Supervised
+            Representations Favorable?</b></font><br>
+        <div class="authors">
+          <b>Sarthak Kumar Maharana</b>,
+          <a href="https://www.linkedin.com/in/krishna-kamal" target="_blank">Krishna Kamal Adidam</a>,
+          <a href='https://www.linkedin.com/in/shoumik-nandi-766b82175' target="_blank">Shoumik Nandi</a>,
+          <a href="https://www.ajitesh-srivastava.com/" target="_blank">Ajitesh Srivastava</a>
+        </div>
+        In ICASSP 2024 Workshop on Self-supervision in Audio, Speech, and Beyond (SASB), 2024
+        <div class="link-badges">
+          <a href="https://arxiv.org/abs/2309.01108" class="badge" target="_blank"><i class="fas fa-book"></i>Paper</a>
+          <a href="https://drive.google.com/file/d/1TpzYqzfHYSTpwdl0qwG2sZdMtFKhQQj0/view?usp=drive_link" class="badge"
+            target="_blank"><i class="fas fa-file-pdf"></i>Poster</a>
+        </div>
+        <p style="margin-top: 5px;">Effectiveness of pre-trained self-supervised learning representations for
+          acoustic-to-articulatory inversion of dysarthric speech.</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+    <!-- ICASSP 2021 -->
+    <div class="row align-items-center">
+      <div class="col-md-3 align-column-center">
+        <center>
+          <img class="img-fluid" src="images/icassp.png" style="border-radius:10px; width: 100%;" alt="ICASSP">
+        </center>
+      </div>
+      <div class="col-md-9">
+        <font size="4"> <b>Acoustic-to-Articulatory Inversion for Dysarthric Speech by Using Cross-Corpus
+            Acoustic-Articulatory Data</b></font><br>
+        <div class="authors">
+          <b>Sarthak Kumar Maharana</b>, <a href="https://in.linkedin.com/in/aravind-illa-13a84658">Aravind
+            Illa</a>,
+          <a href='https://www.linkedin.com/in/renuka-mannem-17686617a'>Renuka
+            Mannem</a>, Yamini Bellur, Veeramani Preethish Kumar, Seena Vengalil,
+          Kiran Polavarapu, Nalini Atchayaram,
+          <a href="https://scholar.google.com/citations?user=B_yn0m0AAAAJ&hl=en" target="_blank">Prasanta Kumar
+            Ghosh</a>
+        </div>
+        In ICASSP, 2021
+        <div class="link-badges">
+          <a href="https://ieeexplore.ieee.org/document/9413625" class="badge" target="_blank"><i
+              class="fas fa-book"></i>Paper</a>
+          <a href="https://sigport.org/sites/default/files/docs/ICASSP2021_Poster.pdf" class="badge" target="_blank"><i
+              class="fas fa-file-pdf"></i>Poster</a>
+          <a href="https://www.youtube.com/watch?v=kYcI8zZ-i6k" class="badge" target="_blank"><i
+              class="fas fa-video"></i>Presentation</a>
+        </div>
+        <p style="margin-top: 5px;">Joint and multi-corpus training for acoustic-to-articulatory inversion of dysarthric
+          speech, using x-vectors, at low-resource data conditions.</p>
+      </div>
+    </div>
+    <div class="content-div"></div>
+
+
+  </div>
+
+  <div class="container">
+    <h3> Academic/Volunteer Work </h3>
+    <ul>
+      <li> Research Advisor - <a href="https://cairatutd.github.io/" target="_blank">CAIR@UTD</a>. </li>
+      <li> Workshop Co-organizer: <a href="https://tta-icml2025.github.io/#" target="_blank">2nd Workshop on Test-Time
+          Adaptation: Putting Updates to the Test</a> @ ICML 2025, <a
+          href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html" target="_blank">1st Workshop on
+          Multimodal Continual Learning</a> @ ICCV 2025. </li>
+      <li> Reviewer - CVPR 2025, ICLR 2025, NeurIPS Workshops 2024, BMVC 2024, ECCV 2024, CVPR Workshops 2024, AAAI 2024
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h3> Miscellaneous </h3>
+    <ul>
+      <li> I'm a cis male. </li>
+      <li> I consider myself lucky to have grown up in two beautiful cities in India - Bangalore and Bhubaneswar, which
+        have infused in me a lot of character and development. I've also spent two quality years in the vibrant,
+        diverse, gently warm, and sprawling city of Los Angeles, California. Absolutely look forward to staying in new
+        places and experiencing different cultures. </li>
+      <li> I'm a HUGE fan of the classical formats of cricket. You'd often find me watching old test match highlights or
+        SRT straight drives. Nothing can get more sublime than that. I bet! I don't consider IPL/T20 cricket as a thing
+        AT ALL. </li>
+      <li> I think mobile photography is like a side gig for me? My phone instantly comes out the moment my eyes catch
+        sight of a beautiful view. </li>
+      <li> I also spend a lot of time on quality humor, specifically dark humor. We could talk about that later. </li>
+    </ul>
+  </div>
+  <div class="content-div"></div>
 </body>
+
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <tbody>
+    <tr>
+      <td style="padding:1px">
+        <br>
+        <p style="text-align:right;font-size:small;">
+          <a href="https://github.com/jonbarron/jonbarron_website">Source code</a> by Jon Barron, with a few added
+          elements.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
 </html>
