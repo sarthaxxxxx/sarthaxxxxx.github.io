@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="AVReCAP: Audio-Visual Continual Test-Time Adaptation without Forgetting — selective fusion-layer retrieval for source-free continual adaptation under non-stationary audio-visual shifts.">
+  <meta property="og:title" content="AVReCAP: Audio-Visual Continual Test-Time Adaptation without Forgetting"/>
+  <meta property="og:description" content="Selective parameter retrieval for source-free audio-visual continual test-time adaptation. Accepted to ECCV 2026."/>
+  <meta property="og:url" content="https://sarthaxxxxx.github.io/AVReCAP/index.html"/>
+  <meta property="og:image" content="static/images/avrecap_framework.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="AVReCAP: Audio-Visual Continual Test-Time Adaptation without Forgetting">
+  <meta name="twitter:description" content="Selective parameter retrieval for source-free audio-visual continual test-time adaptation.">
+  <meta name="twitter:image" content="static/images/avrecap_framework.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="audio-visual learning, continual test-time adaptation, CTTA, AVReCAP, catastrophic forgetting, multimodal learning, ECCV 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AVReCAP · Audio-Visual Continual Test-Time Adaptation without Forgetting</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero landing-hero">
+    <div class="hero-body" style="padding: 3.5rem 1.5rem 2.5rem;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <p class="is-size-6 has-text-weight-semibold" style="color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem;">
+              ECCV 2026 · Malmö, Sweden 🇸🇪
+            </p>
+
+            <h1 class="title is-1 publication-title">
+              Audio-Visual Continual Test-Time Adaptation without Forgetting
+            </h1>
+
+            <div style="margin: 1rem 0 1.25rem;">
+              <span class="venue-badge">ECCV 2026</span>
+              <span class="venue-badge">ICML CATS Workshop 2026</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://sarthaxxxxx.github.io/" target="_blank">Sarthak Kumar Maharana<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://akshaymehra24.github.io/" target="_blank">Akshay Mehra<sup>2</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/bhavya-ramakrishna-26a40254/" target="_blank">Bhavya Ramakrishna<sup>2</sup></a>,</span>
+              <span class="author-block">
+                <a href="https://yunhuiguo.github.io/" target="_blank">Yunhui Guo<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/site/wwwgmsu/" target="_blank">Guan-Ming Su<sup>2</sup></a>
+              </span>
+            </div>
+
+            <div class="is-size-6 publication-authors" style="margin-top: 0.5rem; color: var(--muted);">
+              <span class="author-block"><sup>1</sup>The University of Texas at Dallas</span>
+              &nbsp;·&nbsp;
+              <span class="author-block"><sup>2</sup>Dolby Laboratories Inc.</span>
+            </div>
+
+            <p class="is-size-6" style="color: var(--muted); margin-top: 0.5rem;">Work done during an internship.</p>
+
+            <div class="publication-links" style="margin-top: 1.5rem;">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2602.18528" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" onclick="return false;"
+                   class="external-link button is-normal is-rounded is-light" style="cursor: default; opacity: 0.85;">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code (coming soon)</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="section" style="padding-top: 2.5rem; padding-bottom: 2rem;">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">TL;DR</h2>
+      <div class="tldr-box">
+        Existing audio-visual online test-time adaptation methods degrade under <strong>continual</strong> domain shifts.
+        We show that the <strong>attention fusion layer</strong> transfers strongly across related corruptions — so instead
+        of continually overwriting shared parameters (which leads to catastrophic forgetting), our proposed <strong>AVReCAP</strong> maintains a shared buffer of fusion-layer
+        snapshots and <strong>selectively retrieves</strong> the best match using modality-specific input statistics.
+        This source-free approach improves accuracy on unimodal and bimodal benchmarks while largely preserving source
+        knowledge and minimizing catastrophic forgetting.
+      </div>
+    </div>
+  </section>
+
+  <!-- Framework -->
+  <section class="section section-band-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">AVReCAP Framework</h2>
+      <p class="section-subtitle has-text-centered">
+        A memory-efficient buffer stores fusion-layer parameter snapshots; at each time step, KL-divergence over
+        modality statistics guides selective retrieval before a single online adaptation step.
+      </p>
+      <div class="framework-card">
+        <img src="static/images/avrecap_framework.png" alt="AVReCAP framework illustration">
+        <p class="framework-caption has-text-centered">
+          <strong>AVReCAP</strong> at time-step <em>t</em>: audio-visual inputs are summarized by modality-specific
+          Gaussian statistics. A KL-divergence criterion compares the current batch against elements in shared buffer
+          <em>K</em>. If a close match is found (within threshold τ), stored attention fusion parameters
+          (W<sub>Q</sub>, W<sub>K</sub>, W<sub>V</sub>) are retrieved, adapted with READ-style losses, and written back.
+          Otherwise, a new buffer element is added and redundant entries are merged to respect memory budget η.
+          Only the fusion layer is adapted — audio and visual encoders remain frozen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">The Challenge</h2>
+      <div class="callout-box">
+        In real-world deployment, audio-visual models encounter a <strong>sequence of evolving domains</strong>
+        without task boundaries or source data. Continual parameter updates under bimodal shifts amplify
+        <strong>error accumulation</strong> and <strong>catastrophic forgetting</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- Method steps -->
+  <section class="section section-band-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">How AVReCAP Works</h2>
+      <p class="section-subtitle has-text-centered">
+        At each time step, AVReCAP summarizes incoming batches, retrieves compatible fusion parameters from a shared buffer,
+        adapts online, and maintains a fixed memory budget.
+      </p>
+      <div class="method-table-wrap">
+        <table class="method-table">
+          <thead>
+            <tr>
+              <th class="col-step">Step</th>
+              <th class="col-stage">Stage</th>
+              <th class="col-desc">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-step">1</td>
+              <td class="col-stage">Summarize inputs</td>
+              <td class="col-desc">
+                Compute modality-specific means and covariances (μ, Σ) for audio and visual inputs from the current test batch.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-step">2</td>
+              <td class="col-stage">Retrieve from buffer</td>
+              <td class="col-desc">
+                Compare current statistics to stored buffer elements via KL divergence. If the best match is within threshold τ,
+                retrieve the corresponding fusion parameters (W<sub>Q</sub>, W<sub>K</sub>, W<sub>V</sub>) and plug them into the model.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-step">3</td>
+              <td class="col-stage">Adapt &amp; update</td>
+              <td class="col-desc">
+                Perform one online gradient step on the fusion layer. EMA-update the matched buffer entry's
+                statistics and parameters.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-step">4</td>
+              <td class="col-stage">Expand or merge buffer</td>
+              <td class="col-desc">
+                If no close match exists, add a new buffer element after adaptation. When the buffer exceeds budget η, merge the
+                two most similar entries to preserve a compact memory footprint.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contributions -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">Contributions</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="contribution-card">
+            <div class="icon-wrap"><i class="fas fa-layer-group"></i></div>
+            <h3>Source-free AV continual test-time adaptation study</h3>
+            <p>Comprehensive evaluation under unimodal and bimodal corruptions
+              in a strict source-free continual setting.</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="contribution-card">
+            <div class="icon-wrap"><i class="fas fa-exchange-alt"></i></div>
+            <h3>Fusion-layer transfer</h3>
+            <p>We show intra- and cross-category transferability of attention fusion parameters, enabling selective
+              retrieval rather than overwriting shared weights across domains.</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="contribution-card">
+            <div class="icon-wrap"><i class="fas fa-shield-alt"></i></div>
+            <h3>Minimal forgetting</h3>
+            <p>AVReCAP achieves SOTA continual adaptation while incurring only a 2.9% source accuracy (to evaluate forgetting) drop on
+              VGGSound, compared to 27.9% for READ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BibTeX -->
+  <section class="section section-band-light" id="BibTeX">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title has-text-centered">BibTeX</h2>
+      <p class="has-text-centered" style="color: var(--muted); margin-bottom: 1.25rem;">
+        If our work is of interest to you, consider citing it.
+      </p>
+      <div class="bibtex-box">
+        <pre><code>@inproceedings{maharana2026avrecap,
+  title={Audio-Visual Continual Test-Time Adaptation without Forgetting},
+  author={Maharana, Sarthak Kumar and Mehra, Akshay and Ramakrishna, Bhavya and Guo, Yunhui and Su, Guan-Ming},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p style="color: var(--muted); font-size: 0.95rem;">
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
