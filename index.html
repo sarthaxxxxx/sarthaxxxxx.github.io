@@ -3,433 +3,822 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10120f">
   <meta name="description" content="Sarthak Kumar Maharana is a computer vision researcher building adaptive, robust multimodal AI for dynamic and safety-critical environments.">
   <meta property="og:title" content="Sarthak Kumar Maharana — Adaptive Multimodal AI">
   <meta property="og:description" content="Research in continual adaptation, robust multimodal perception, and physical AI.">
   <meta property="og:image" content="images/self_v4.jpeg">
   <meta property="og:type" content="website">
-  <title>Sarthak Kumar Maharana — Adaptive Multimodal AI Researcher</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23d8ff4f%22/><text x=%2250%22 y=%2268%22 text-anchor=%22middle%22 font-size=%2254%22 font-family=%22Arial%22 font-weight=%22900%22 fill=%22%2310120f%22>SM</text></svg>">
+  <title>Sarthak Kumar Maharana</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231a1a1a%22/><text x=%2250%22 y=%2268%22 text-anchor=%22middle%22 font-size=%2254%22 font-family=%22Arial%22 font-weight=%22900%22 fill=%22%23ffffff%22>SM</text></svg>">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
-
     :root {
-      --ink: #10120f;
-      --ink-soft: #191c17;
-      --paper: #f4f2e9;
-      --paper-2: #e8e5da;
-      --acid: #d8ff4f;
-      --blue: #7aa7ff;
-      --muted: #a8ada2;
-      --line-dark: rgba(255, 255, 255, .16);
-      --line-light: rgba(16, 18, 15, .2);
-      --mono: "DM Mono", ui-monospace, monospace;
-      --sans: "Manrope", Arial, sans-serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --fg: #1a1a1a;
+      --bg: #ffffff;
+      --muted: #6b6b6b;
+      --rule: #e6e6e6;
+      --link: #000ebb;
+      --link-hover: #0008a0;
+      --me-underline: #1a1a1a;
+      --chip-bg: #f3f3f3;
+      --chip-bg-hover: #e8e8e8;
+      --chip-bg-active: #555;
+      --chip-fg-active: #ffffff;
+      --measure: 780px;
+      --gutter: 1.25rem;
+      --y-tight: .25rem;
+      --y-snug: .5rem;
+      --y-comfy: 1rem;
+      --y-loose: 2rem;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: var(--sans);
+      font-family: var(--font-sans);
       font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
+      line-height: 1.55;
+      color: var(--fg);
+      background: var(--bg);
+      margin: 0;
+      padding: 0 var(--gutter);
     }
-    ::selection { background: var(--acid); color: var(--ink); }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { font: inherit; }
-    .shell { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
-    .mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .eyebrow { color: var(--muted); font: 600 .88rem/1.4 var(--mono); letter-spacing: .11em; text-transform: uppercase; }
 
-    .skip-link { position: fixed; left: 16px; top: -60px; z-index: 100; background: var(--acid); color: var(--ink); padding: 10px 14px; }
-    .skip-link:focus { top: 16px; }
-
-    nav {
-      position: fixed; inset: 0 0 auto; z-index: 30;
-      background: rgba(16, 18, 15, .82); backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line-dark);
+    main, .site-header, .site-footer {
+      max-width: var(--measure);
+      margin-inline: auto;
     }
-    .nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.05rem; }
-    .brand span { color: var(--acid); }
-    .nav-links { display: flex; align-items: center; gap: 28px; font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .nav-links a { color: #c8cbc2; transition: color .2s; }
-    .nav-links a:hover { color: var(--acid); }
-    .nav-cta { border: 1px solid var(--acid); color: var(--acid) !important; padding: 9px 14px; }
 
-    .hero { padding: 128px 0 64px; position: relative; overflow: hidden; }
-    .hero::before {
-      content: ""; position: absolute; width: 580px; height: 580px; border: 1px solid rgba(216,255,79,.14);
-      border-radius: 50%; right: -230px; top: 100px; box-shadow: 0 0 0 100px rgba(216,255,79,.025), 0 0 0 200px rgba(216,255,79,.018);
+    .skip-link {
+      position: absolute;
+      left: -10000px;
+      top: auto;
     }
-    .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 42px; }
-    .status { display: inline-flex; align-items: center; gap: 10px; font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .status-dot { width: 9px; height: 9px; background: var(--acid); border-radius: 50%; box-shadow: 0 0 0 6px rgba(216,255,79,.12); animation: pulse 2.3s infinite; }
-    @keyframes pulse { 50% { box-shadow: 0 0 0 11px rgba(216,255,79,0); } }
-    .hero-index {
-      position: relative;
-      background: var(--acid);
-      color: var(--ink);
-      border: 1px solid var(--acid);
-      box-shadow: 5px 5px 0 rgba(216, 255, 79, .18);
-      padding: 10px 14px;
-      font: 600 .9rem/1.25 var(--mono);
-      letter-spacing: .035em;
-      text-transform: uppercase;
+
+    .skip-link:focus {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      background: var(--fg);
+      color: var(--bg);
+      padding: .5rem .75rem;
+      z-index: 100;
     }
-    h1 { font-size: clamp(4rem, 11.2vw, 9.8rem); line-height: .83; letter-spacing: -.085em; margin: 0; max-width: 1100px; font-weight: 800; }
-    h1 span { display: block; }
-    h1 .outline { color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
-    .hero-grid { display: grid; grid-template-columns: minmax(250px, 310px) 1fr; gap: clamp(48px, 7vw, 96px); align-items: center; }
-    .identity { display: flex; flex-direction: column; align-items: stretch; gap: 18px; }
-    .portrait { width: 100%; height: 382px; object-fit: cover; filter: saturate(.78) contrast(1.04); border: 1px solid var(--line-dark); border-radius: 2px; }
-    .identity strong { display: block; font-size: 1.3rem; letter-spacing: -.025em; }
-    .identity p { margin: 5px 0 0; color: var(--muted); font-size: .9rem; }
-    .pitch { margin: 0; padding-top: 28px; border-top: 1px solid var(--line-dark); font-size: clamp(1.38rem, 2.6vw, 2.15rem); line-height: 1.4; letter-spacing: -.035em; max-width: 790px; }
-    .pitch strong { color: var(--acid); font-weight: 600; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 17px; border: 1px solid var(--line-dark); font: 500 .76rem var(--mono); text-transform: uppercase; letter-spacing: .05em; transition: .2s ease; }
-    .button:hover { background: var(--paper); color: var(--ink); transform: translateY(-2px); }
-    .button.primary { background: var(--acid); border-color: var(--acid); color: var(--ink); }
-    .button.primary:hover { background: #e4ff7b; }
 
-    .ticker { border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); overflow: hidden; padding: 15px 0; color: #bec2b8; }
-    .ticker-track { display: flex; width: max-content; animation: ticker 32s linear infinite; }
-    .ticker span { font: 500 .76rem var(--mono); text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
-    .ticker span::after { content: "✳"; color: var(--acid); margin: 0 28px; }
-    @keyframes ticker { to { transform: translateX(-50%); } }
-
-    section { padding: 88px 0; }
-    .paper-section { background: var(--paper); color: var(--ink); }
-    .section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; margin-bottom: 52px; align-items: start; }
-    .paper-section .eyebrow { color: #64685f; }
-    .section-title { font-size: clamp(2.5rem, 5.8vw, 5.6rem); line-height: .98; letter-spacing: -.065em; margin: 0; font-weight: 700; }
-    .section-intro { margin: 10px 0 0; font-size: 1.1rem; max-width: 650px; color: #51554e; }
-
-    .themes { border-top: 1px solid var(--line-light); }
-    .theme { display: grid; grid-template-columns: 90px 1fr 1.25fr; gap: 34px; padding: 28px 0; border-bottom: 1px solid var(--line-light); align-items: start; transition: padding .25s; }
-    .theme:hover { padding-left: 12px; }
-    .theme-number { color: #7b8076; font: 500 .75rem var(--mono); }
-    .theme h3 { font-size: clamp(1.45rem, 2.6vw, 2.35rem); line-height: 1.08; letter-spacing: -.045em; margin: 0; }
-    .theme p { margin: 0; color: #555950; }
-    .theme-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
-    .tag { border: 1px solid #b8b9b0; padding: 5px 8px; font: 500 .65rem var(--mono); text-transform: uppercase; letter-spacing: .04em; }
-
-    .work-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 42px; }
-    .work-head .section-title { max-width: 700px; }
-    .work-head p { margin: 0; color: var(--muted); max-width: 340px; }
-    .project-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; }
-    .project { grid-column: span 6; background: var(--ink-soft); border: 1px solid var(--line-dark); overflow: hidden; position: relative; }
-    .project:nth-child(1), .project:nth-child(4) { grid-column: span 7; }
-    .project:nth-child(2), .project:nth-child(3) { grid-column: span 5; }
-    .project-visual { height: 310px; overflow: hidden; background: #e9e8df; position: relative; }
-    .project-visual img { width: 100%; height: 100%; object-fit: contain; padding: 16px; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
-    .project:hover .project-visual img { transform: scale(1.035); }
-    .venue {
-      position: absolute; left: 14px; top: 14px; z-index: 2;
-      background: var(--acid); color: var(--ink);
-      padding: 9px 12px;
-      border: 1px solid var(--ink);
-      box-shadow: 4px 4px 0 var(--ink);
-      font: 700 .78rem/1 var(--mono);
-      letter-spacing: .04em;
-      text-transform: uppercase;
+    .site-header {
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 1.5rem;
     }
-    .project-body { padding: 24px; }
-    .project-kicker { color: var(--blue); font: 500 .69rem var(--mono); text-transform: uppercase; letter-spacing: .07em; }
-    .project h3 { margin: 10px 0 11px; font-size: clamp(1.35rem, 2.1vw, 2rem); line-height: 1.13; letter-spacing: -.04em; }
-    .project p { margin: 0; color: #adb2a7; font-size: .93rem; }
-    .project-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 22px; font: 500 .7rem var(--mono); text-transform: uppercase; }
-    .project-links a { border-bottom: 1px solid #6a6f65; padding-bottom: 2px; }
-    .project-links a:hover { color: var(--acid); border-color: var(--acid); }
 
-    .experience-grid { display: grid; grid-template-columns: .8fr 2fr; gap: 54px; }
-    .experience-sticky { position: sticky; top: 110px; align-self: start; }
-    .experience-sticky p { color: var(--muted); margin-top: 24px; }
-    .timeline { border-top: 1px solid var(--line-dark); }
-    .role { display: grid; grid-template-columns: 130px 1fr; gap: 30px; border-bottom: 1px solid var(--line-dark); padding: 30px 0; }
-    .role time { color: var(--muted); font: 400 .72rem var(--mono); text-transform: uppercase; }
-    .role h3 { font-size: 1.45rem; line-height: 1.2; letter-spacing: -.035em; margin: 0 0 6px; }
-    .role .role-title { color: var(--acid); font-size: .86rem; margin-bottom: 12px; }
-    .role p { margin: 0; color: #adb2a7; }
+    .site-header nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem 1rem;
+    }
 
-    .updates-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
-    .news-list { border-top: 1px solid var(--line-light); }
-    .news-item { display: grid; grid-template-columns: 100px 1fr; gap: 28px; padding: 22px 0; border-bottom: 1px solid var(--line-light); }
-    .news-item time { font: 500 .7rem var(--mono); text-transform: uppercase; color: #73776f; }
-    .news-item p { margin: 0; }
-    .news-item a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    .news-item a:hover { background: var(--acid); }
-    details { margin-top: 24px; }
-    summary { cursor: pointer; font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .06em; list-style: none; }
-    summary::after { content: " +"; color: #74786f; }
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .brand:hover { text-decoration: underline; }
+
+    .nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .25rem .5rem;
+      align-items: center;
+    }
+
+    .nav .sep { color: var(--muted); }
+
+    .nav a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .nav a:hover { text-decoration: underline; }
+
+    .socials {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .socials li { margin: 0; }
+
+    .socials a {
+      display: inline-flex;
+      color: #6b6b6b;
+      opacity: .7;
+      transition: color 120ms ease, opacity 120ms ease;
+    }
+
+    .socials a:hover,
+    .socials a:focus-visible {
+      color: var(--link);
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    .site-header .socials svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .site-footer .socials {
+      gap: 1.25rem;
+      margin-top: .75rem;
+    }
+
+    .site-footer .socials svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.25;
+      margin: var(--y-loose) 0 var(--y-snug);
+    }
+
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 1.05rem; }
+    h4 { font-size: 1rem; }
+
+    main > section,
+    main > .page-section {
+      margin-top: 2.75rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      clear: both;
+    }
+
+    main > section:first-of-type,
+    main > .page-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    main > section > h2:first-child,
+    main > .page-section > h2:first-child {
+      margin-top: 0;
+    }
+
+    #miscellaneous > h3 {
+      margin-top: 2.25rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    #miscellaneous > h3:first-of-type {
+      margin-top: 1.25rem;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .about-block::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    p { margin: var(--y-snug) 0; }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .avatar {
+      float: right;
+      margin: 0 0 .5rem 1rem;
+      shape-outside: circle();
+    }
+
+    .avatar img {
+      display: block;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .me {
+      color: var(--fg);
+      border-bottom: 1px solid var(--me-underline);
+    }
+
+    .highlight {
+      background: #ffffd0;
+      padding: .15rem .35rem;
+      border-radius: 3px;
+    }
+
+    .filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin: var(--y-snug) 0 var(--y-comfy);
+    }
+
+    .chip {
+      font-family: var(--font-sans);
+      font-size: .82rem;
+      line-height: 1.2;
+      background: var(--chip-bg);
+      color: var(--fg);
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: .15rem .55rem;
+      cursor: pointer;
+      transition: background-color 120ms ease, color 120ms ease;
+    }
+
+    .chip:hover { background: var(--chip-bg-hover); }
+
+    .chip:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    .chip.is-active {
+      background: var(--chip-bg-active);
+      color: var(--chip-fg-active);
+    }
+
+    .year-group {
+      margin: 1.75rem 0 2.25rem;
+    }
+
+    .year-group h3 {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 var(--y-snug);
+      padding-bottom: .35rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .pub {
+      padding: var(--y-snug) 0;
+      border-bottom: 1px dashed var(--rule);
+    }
+
+    .pub:last-child { border-bottom: 0; }
+
+    .pub-body {
+      min-width: 0;
+      align-self: center;
+    }
+
+    .pub-title {
+      font-size: 1rem;
+      margin: 0 0 var(--y-tight);
+      line-height: 1.3;
+    }
+
+    .pub-authors,
+    .pub-venue {
+      font-size: .82rem;
+      margin: var(--y-tight) 0;
+      line-height: 1.4;
+    }
+
+    .pub-authors { color: var(--muted); }
+
+    .pub-venue {
+      font-style: italic;
+      color: #4a4a4a;
+    }
+
+    .pub-venue .highlight {
+      font-style: normal;
+      font-weight: 700;
+      color: #000ebb;
+      background: none;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    .pub-links {
+      list-style: none;
+      padding: 0;
+      margin: var(--y-snug) 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .35rem .7rem;
+    }
+
+    .pub-links li { margin: 0; }
+
+    .pub-links a {
+      display: inline-flex;
+      color: #6b6b6b;
+      opacity: .7;
+      transition: color 120ms ease, opacity 120ms ease;
+    }
+
+    .pub-links a:hover,
+    .pub-links a:focus-visible {
+      color: var(--link);
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    .pub-links svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    body[data-active-tags] .pub:not(.match) { display: none; }
+    body[data-active-tags] .year-group:not(:has(.pub.match)) { display: none; }
+
+    .news-list { margin: var(--y-snug) 0 var(--y-comfy); }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: .75rem;
+      padding: .45rem 0;
+      border-bottom: 1px dashed var(--rule);
+    }
+
+    .news-item:last-child { border-bottom: 0; }
+
+    .news-item time {
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    .news-item p {
+      margin: 0;
+      font-size: .92rem;
+    }
+
+    details { margin: 1rem 0; }
+
+    summary {
+      cursor: pointer;
+      font-size: .9rem;
+      color: var(--muted);
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: " +"; }
     details[open] summary::after { content: " −"; }
-    .old-news { margin-top: 30px; }
-    .old-news summary { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
-    .old-news summary span { color: #73776f; font-size: .66rem; }
-    .old-news[open] summary { border-bottom: 0; }
-    .old-news .news-item { padding: 18px 0; }
 
-    .archive { padding-top: 0; }
-    .archive details { border-top: 1px solid var(--line-light); }
-    .archive summary { padding: 24px 0; font-size: .85rem; display: flex; justify-content: space-between; }
-    .archive-list { padding-bottom: 30px; }
-    .archive-paper { display: grid; grid-template-columns: 125px 1fr auto; gap: 24px; padding: 19px 0; border-top: 1px solid rgba(16,18,15,.1); align-items: center; }
-    .archive-paper .year { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; color: #676c63; font: 500 .68rem/1.2 var(--mono); text-transform: uppercase; }
-    .archive-paper .pub-venue { display: inline-block; background: var(--acid); color: var(--ink); border: 1px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); padding: 6px 8px; font-size: .78rem; font-weight: 700; letter-spacing: .035em; }
-    .archive-paper strong { line-height: 1.35; }
-    .archive-paper a { font: .68rem var(--mono); text-transform: uppercase; border-bottom: 1px solid; }
-    .archive-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 14px; }
-    .archive-links a:hover { background: var(--acid); }
+    .experience-list { margin: var(--y-snug) 0 var(--y-comfy); }
 
-    .contact { padding: 84px 0 34px; }
-    .contact-callout { display: grid; grid-template-columns: 1.7fr 1fr; gap: 60px; align-items: end; border-bottom: 1px solid var(--line-dark); padding-bottom: 75px; }
-    .contact h2 { font-size: clamp(3.1rem, 7.8vw, 7.5rem); line-height: .91; letter-spacing: -.075em; margin: 0; }
-    .contact h2 span { color: var(--acid); }
-    .contact-copy p { color: #b5baaf; margin: 0 0 24px; }
-    footer { display: flex; justify-content: space-between; gap: 25px; padding: 28px 0 0; color: #858a80; font: .68rem var(--mono); text-transform: uppercase; }
-    footer .footer-links { display: flex; gap: 18px; }
-    footer a:hover { color: var(--acid); }
+    .role {
+      padding: .75rem 0;
+      border-bottom: 1px dashed var(--rule);
+    }
 
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
+    .role:last-child { border-bottom: 0; }
 
-    @media (max-width: 800px) {
-      .shell { width: min(100% - 28px, 1200px); }
-      .nav-links a:not(.nav-cta) { display: none; }
-      .hero { padding: 112px 0 58px; }
-      .hero-grid, .section-head, .experience-grid, .updates-grid, .contact-callout { grid-template-columns: 1fr; gap: 35px; }
-      .identity { width: min(270px, 76vw); }
-      .portrait { height: 334px; }
-      .theme { grid-template-columns: 45px 1fr; gap: 18px; }
-      .theme p { grid-column: 2; }
-      .project, .project:nth-child(n) { grid-column: span 12; }
-      .project-visual { height: 255px; }
-      .work-head { align-items: start; flex-direction: column; }
-      section { padding: 68px 0; }
-      .experience-sticky { position: static; }
-      .role { grid-template-columns: 88px 1fr; gap: 16px; }
-      .archive-paper { grid-template-columns: 70px 1fr; }
-      .archive-links { grid-column: 2; justify-content: flex-start; }
-      footer { flex-direction: column; }
+    .role time {
+      display: block;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: .2rem;
+    }
+
+    .role h4 { margin: 0 0 .15rem; }
+
+    .role-title {
+      font-size: .88rem;
+      color: var(--muted);
+      margin: 0 0 .35rem;
+    }
+
+    .role p {
+      margin: 0;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      margin-top: var(--y-loose);
+      padding: 1rem 0 2rem;
+      border-top: 1px solid var(--rule);
+      text-align: center;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .news-item { grid-template-columns: 75px 1fr; }
     }
 
     @media (max-width: 480px) {
-      h1 { font-size: 3.7rem; }
-      .hero-top { flex-direction: column; align-items: flex-start; margin-bottom: 38px; }
-      .hero-index { display: inline-block; font-size: .76rem; box-shadow: 4px 4px 0 rgba(216, 255, 79, .18); }
-      .identity { align-items: start; }
-      .portrait { width: 100%; height: 278px; }
-      .theme { grid-template-columns: 32px 1fr; }
-      .news-item { grid-template-columns: 75px 1fr; gap: 14px; }
-      .role { grid-template-columns: 1fr; }
-      .contact h2 { font-size: 3.6rem; }
+      .avatar {
+        float: none;
+        margin: 0 auto .75rem;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
+      .chip, .socials a, .pub-links a { transition: none; }
     }
   </style>
-  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <nav aria-label="Primary navigation">
-    <div class="shell nav-inner">
-      <a class="brand" href="#top" aria-label="Sarthak Maharana, home">Sarthak Kumar Maharana<span></span></a>
-      <div class="nav-links">
-        <a href="#research">Research</a>
-        <a href="#work">Selected work</a>
-        <a href="#experience">Experience</a>
-        <a href="#updates">Updates</a>
-        <a class="nav-cta" href="data/Sarthak_CV.pdf">Download CV ↗</a>
-      </div>
-    </div>
-  </nav>
+
+  <header class="site-header">
+    <nav aria-label="Primary">
+      <a class="brand" href="/">Sarthak Kumar Maharana</a>
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li class="sep" aria-hidden="true">/</li>
+        <li><a href="#publications">Publications</a></li>
+        <li class="sep" aria-hidden="true">/</li>
+        <li><a href="#miscellaneous">Misc</a></li>
+      </ul>
+      <ul class="socials">
+        <li>
+          <a href="https://github.com/sarthaxxxxx/" aria-label="GitHub" title="GitHub" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:sarthakmaharana9811@gmail.com" aria-label="E-mail" title="E-mail">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="data/Sarthak_CV.pdf" aria-label="CV" title="CV">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5zM8 13h8v2H8v-2zm0 4h5v2H8v-2z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
   <main id="main">
-    <header class="hero" id="top">
-      <div class="shell">
-        <div class="hero-top">
-          <div class="status"><span class="status-dot"></span> Open to research conversations & Collaborations. Feel free to reach out!</div>
-          <div class="hero-index">Computer Vision / Multimodal AI / Physical AI</div>
-        </div>
-        <div class="hero-grid">
-          <div class="identity">
-            <img class="portrait" src="images/self_v4.jpeg" alt="Portrait of Sarthak Kumar Maharana" width="168" height="208">
-            <div>
-              <strong>Sarthak Kumar Maharana</strong>
-              <p>CS PhD Candidate advised by <a href="https://yunhuiguo.github.io/">Dr. Yunhui Guo</a><br>The University of Texas at Dallas</p>
+    <section class="page-section about-block" id="about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
+    <figure class="avatar">
+      <img src="images/self_v4.jpeg" alt="Portrait of Sarthak Kumar Maharana" width="120" height="120" decoding="async">
+    </figure>
+
+    <p>I am a CS PhD Candidate at <a href="https://www.utdallas.edu/">The University of Texas at Dallas</a>, advised by <a href="https://yunhuiguo.github.io/">Dr. Yunhui Guo</a>. Prior to this, I earned my MS in Electrical Engineering from the <a href="https://www.usc.edu/">University of Southern California</a>. I completed my BTech in Electrical and Electronics Engineering at the <a href="https://www.iiit-bh.ac.in/">International Institute of Information Technology (IIIT), Bhubaneswar</a>, India.</p>
+
+    <p>I'm interested in building <strong>adaptive, efficient, and robust AI systems</strong> that keep learning when the world changes. My work spans continual learning, multimodal perception, and real-time motion planning and reasoning for autonomous driving.</p>
+
+    <p>Areas of interest: <span class="highlight">Computer Vision, Multimodal AI, Physical AI. </span></p>
+    <p> Sub areas: <span class="highlight">Continual Learning/Adaptation, Robust and Efficient Perception, On-Device AI, Autonomous Driving.</span></p>
+
+    <p>Open to research conversations &amp; collaborations. Feel free to reach out!</p>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-heading">
+      <h2 id="publications-heading">Publications</h2>
+      <p>My full publication record is available on <a href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+
+      <div class="filter" role="group" aria-label="Filter by topic">
+        <button type="button" class="chip is-active" data-tag="" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-tag="adaptation" aria-pressed="false">Continual Adaptation</button>
+        <button type="button" class="chip" data-tag="multimodal" aria-pressed="false">Multimodal</button>
+        <button type="button" class="chip" data-tag="benchmark" aria-pressed="false">Benchmarks</button>
+        <button type="button" class="chip" data-tag="driving" aria-pressed="false">Autonomous Driving</button>
+        <button type="button" class="chip" data-tag="survey" aria-pressed="false">Surveys</button>
+      </div>
+
+      <section class="year-group" data-year="2026">
+        <h3>2026</h3>
+        <div class="year-list">
+          <article class="pub" data-tags="adaptation">
+            <div class="pub-body">
+              <h4 class="pub-title">Towards Continual Test-Time Adaptation of Vision-Language Models in Open-Vocabulary Semantic Segmentation</h4>
+              <p class="pub-authors">Chandler Timm C Doloriel, Yunbei Zhang, <span class="me">Sarthak Kumar Maharana</span>, Muhammad Salman Siddiqui, Tor Kristian Stevik, Fadi Al Machot, Kristian Hovde Liland, Habib Ullah</p>
+              <p class="pub-venue"><span class="highlight">arXiv</span>, 2026</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2608.29923" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+              </ul>
             </div>
-          </div>
-          <div>
-            <p class="pitch">I build <strong>adaptive, efficient, and robust AI systems</strong> that keep learning when the world changes. My work spans continual learning, multimodal perception, and real-time motion planning and reasoning for autonomous driving.</p>
-            <div class="hero-actions">
-              <a class="button primary" href="mailto:sarthakmaharana9811@gmail.com">Email me ↗</a>
-              <a class="button" href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar ↗</a>
-              <a class="button" href="https://github.com/sarthaxxxxx/" target="_blank" rel="noopener">GitHub ↗</a>
-              <a class="button" href="https://www.linkedin.com/in/sarthak9811/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </article>
+
+          <article class="pub" data-tags="multimodal adaptation">
+            <div class="pub-body">
+              <h4 class="pub-title">Audio-Visual Continual Test-Time Adaptation without Forgetting</h4>
+              <p class="pub-authors"><span class="me">Sarthak Kumar Maharana</span>, Akshay Mehra, Bhavya Ramakrishna, Yunhui Guo, Guan-Ming Su</p>
+              <p class="pub-venue">European Conference on Computer Vision (<span class="highlight">ECCV</span>), 2026</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2602.18528" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://github.com/sarthaxxxxx/AVReCAP" title="Code" aria-label="Code" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></a></li>
+                <li><a href="AVReCAP/" title="Project page" aria-label="Project page"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-3.05a15.6 15.6 0 0 0-1.17-3.5A8.04 8.04 0 0 1 18.93 8zM12 4c.83 1.18 1.49 2.55 1.94 4h-3.88c.45-1.45 1.11-2.82 1.94-4zM4.26 8a8.04 8.04 0 0 1 4.22-3.5A15.6 15.6 0 0 0 7.31 8H4.26zM2 12c0-.69.07-1.36.2-2H6c-.07.66-.13 1.32-.13 2 0 .68.06 1.34.13 2H2.2c-.13-.64-.2-1.31-.2-2zm2.26 4h3.05c.27 1.27.66 2.43 1.17 3.5A8.04 8.04 0 0 1 4.26 16zM12 20c-.83-1.18-1.49-2.55-1.94-4h3.88c-.45 1.45-1.11 2.82-1.94 4zm2.34-6H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.4 5.5c.5-1.07.9-2.23 1.17-3.5h3.05a8.04 8.04 0 0 1-4.22 3.5zm1.43-5.5c.07-.66.13-1.32.13-2 0-.68-.06-1.34-.13-2h3.8c.13.64.2 1.31.2 2s-.07 1.36-.2 2h-3.8z"/></svg></a></li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </div>
-    </header>
+          </article>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Continual Learning</span><span>Robust and Efficient Perception</span><span>On-Device AI</span><span>Autonomous Driving</span>
-        <span>Continual Learning</span><span>Robust and Efficient Perception</span><span>On-Device AI</span><span>Autonomous Driving</span>
-      </div>
-    </div>
-
-    <section class="paper-section" id="updates">
-      <div class="shell updates-grid">
-        <div class="reveal"><div class="eyebrow">01 / Now &amp; earlier</div><h2 class="section-title">Signals &amp Updates</h2></div>
-        <div class="reveal">
-          <div class="news-list">
-            <article class="news-item"><time>Jul 2026</time><p>Received an ECCV 2026 travel award; will also review for AAAI 2027.</p></article>
-            <article class="news-item"><time>Jun 2026</time><p>Our <a href="https://openreview.net/forum?id=mM3r03Xw1V" target="_blank" rel="noopener">continual test-time adaptation survey</a> was accepted to TMLR.</p></article>
-            <article class="news-item"><time>Jun 2026</time><p><a href="https://arxiv.org/abs/2602.18528" target="_blank" rel="noopener">AVReCAP</a> was accepted to ECCV 2026.</p></article>
-            <article class="news-item"><time>Apr 2026</time><p>I'll be joining NEC Laboratories America to work on real-time reasoning and planning for autonomous driving.</p></article>
-            <article class="news-item"><time>Apr 2026</time><p>Returned to reviewing for <a href="https://neurips.cc/" target="_blank" rel="noopener">NeurIPS 2026</a>.</p></article>
-            <article class="news-item"><time>Feb 2026</time><p><a href="https://openreview.net/pdf?id=mAHRgieyOV" target="_blank" rel="noopener">Variational Diffusion Unlearning</a> was accepted to TMLR.</p></article>
-            <article class="news-item"><time>Sep 2025</time><p><a href="https://arxiv.org/abs/2506.00358" target="_blank" rel="noopener">AVROBUSTBENCH</a> was accepted to NeurIPS Datasets &amp; Benchmarks.</p></article>
-              <article class="news-item"><time>Aug 2025</time><p>Received a travel grant from the ICCV community!</p></article>
-            <article class="news-item"><time>Jun 2025</time><p><a href="https://arxiv.org/abs/2412.02837" target="_blank" rel="noopener">BATCLIP</a> was accepted to ICCV 2025.</p></article>
-            <article class="news-item"><time>May 2025</time><p>We will organize the <a href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html" target="_blank" rel="noopener">1st Workshop on Multimodal Continual Learning</a> at ICCV 2025.</p></article>
-          </div>
-          <details class="old-news">
-            <summary>Old news <span>2024 — 2026</span></summary>
-            <div class="news-list">
-              <article class="news-item"><time>May 2025</time><p>Passed my qualifying examination and became a PhD candidate.</p></article>
-              <article class="news-item"><time>Mar 2025</time><p>We will co-organize the <a href="https://tta-icml2025.github.io/" target="_blank" rel="noopener">2nd Workshop on Test-Time Adaptation</a> at ICML 2025.</p></article>
-              <article class="news-item"><time>Feb 2025</time><p>I'll join <a href="https://www.dolby.com/" target="_blank" rel="noopener">Dolby Laboratories</a> as a PhD Research Intern for Summer 2025.</p></article>
-              <article class="news-item"><time>Dec 2024</time><p><a href="https://arxiv.org/abs/2403.10650v2" target="_blank" rel="noopener">PALM</a> was accepted to AAAI 2025 as an <strong>oral presentation</strong>.</p></article>
-              <article class="news-item"><time>Nov 2024</time><p>Served as a reviewer for <a href="https://cvpr.thecvf.com/" target="_blank" rel="noopener">CVPR 2025</a>.</p></article>
-              <article class="news-item"><time>Oct 2024</time><p>Variational Diffusion Unlearning was accepted to the NeurIPS SafeGenAI Workshop.</p></article>
-              <article class="news-item"><time>Sep 2024</time><p>Our submodular optimization work for active 3D object detection was accepted to NeurIPS 2024.</p></article>
-              <article class="news-item"><time>Aug 2024</time><p>Served as a reviewer for <a href="https://iclr.cc/Conferences/2025" target="_blank" rel="noopener">ICLR 2025</a>.</p></article>
-              <article class="news-item"><time>Jul 2024</time><p>Our work on <a href="https://arxiv.org/abs/2403.10663" target="_blank" rel="noopener">DNN watermarking</a> was accepted to ECCV 2024.</p></article>
+          <article class="pub" data-tags="survey adaptation">
+            <div class="pub-body">
+              <h4 class="pub-title">Continual Test-Time Adaptation in Computer Vision: Methods, Benchmarks, and Future Directions</h4>
+              <p class="pub-authors"><span class="me">Sarthak Kumar Maharana*</span>, Shambhavi Mishra*, Yunbei Zhang*, Shuaicheng Niu, Taki Hasan Rafi, Jihun Hamm, Marco Pedersoli, Jose Dolz, Yunhui Guo</p>
+              <p class="pub-venue">Transactions on Machine Learning Research (<span class="highlight">TMLR</span>), 2026</p>
+              <ul class="pub-links">
+                <li><a href="https://openreview.net/forum?id=mM3r03Xw1V" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://github.com/sarthaxxxxx/Awesome-Continual-Test-Time-Adaptation" title="Code" aria-label="Code" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></a></li>
+              </ul>
             </div>
-          </details>
+          </article>
+
+          <article class="pub" data-tags="">
+            <div class="pub-body">
+              <h4 class="pub-title">Variational Diffusion Unlearning: A Variational Inference Framework for Unlearning in Diffusion Models under Data Constraints</h4>
+              <p class="pub-authors">Subhodip Panda, Varun M S, Shreyans Jain, <span class="me">Sarthak Kumar Maharana</span>, Prathosh AP</p>
+              <p class="pub-venue">Transactions on Machine Learning Research (<span class="highlight">TMLR</span>), 2026</p>
+              <ul class="pub-links">
+                <li><a href="https://openreview.net/pdf?id=mAHRgieyOV" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
         </div>
-      </div>
+      </section>
+
+      <section class="year-group" data-year="2025">
+        <h3>2025</h3>
+        <div class="year-list">
+          <article class="pub" data-tags="multimodal benchmark">
+            <div class="pub-body">
+              <h4 class="pub-title">AVROBUSTBENCH: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time</h4>
+              <p class="pub-authors"><span class="me">Sarthak Kumar Maharana</span>, Saksham Singh Kushwaha, Baoming Zhang, Adrian Rodriguez, Songtao Wei, Yapeng Tian, Yunhui Guo</p>
+              <p class="pub-venue">Conference on Neural Information Processing Systems (<span class="highlight">NeurIPS</span>) Datasets &amp; Benchmarks, 2025</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2506.00358" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://github.com/sarthaxxxxx/AVROBUSTBENCH" title="Code" aria-label="Code" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></a></li>
+                <li><a href="AVROBUSTBENCH/" title="Project page" aria-label="Project page"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-3.05a15.6 15.6 0 0 0-1.17-3.5A8.04 8.04 0 0 1 18.93 8zM12 4c.83 1.18 1.49 2.55 1.94 4h-3.88c.45-1.45 1.11-2.82 1.94-4zM4.26 8a8.04 8.04 0 0 1 4.22-3.5A15.6 15.6 0 0 0 7.31 8H4.26zM2 12c0-.69.07-1.36.2-2H6c-.07.66-.13 1.32-.13 2 0 .68.06 1.34.13 2H2.2c-.13-.64-.2-1.31-.2-2zm2.26 4h3.05c.27 1.27.66 2.43 1.17 3.5A8.04 8.04 0 0 1 4.26 16zM12 20c-.83-1.18-1.49-2.55-1.94-4h3.88c-.45 1.45-1.11 2.82-1.94 4zm2.34-6H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.4 5.5c.5-1.07.9-2.23 1.17-3.5h3.05a8.04 8.04 0 0 1-4.22 3.5zm1.43-5.5c.07-.66.13-1.32.13-2 0-.68-.06-1.34-.13-2h3.8c.13.64.2 1.31.2 2s-.07 1.36-.2 2h-3.8z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pub" data-tags="multimodal">
+            <div class="pub-body">
+              <h4 class="pub-title">BATCLIP: Bimodal Online Test-Time Adaptation for CLIP</h4>
+              <p class="pub-authors"><span class="me">Sarthak Kumar Maharana</span>, Baoming Zhang, Leonid Karlinsky, Rogerio Feris, Yunhui Guo</p>
+              <p class="pub-venue">International Conference on Computer Vision (<span class="highlight">ICCV</span>), 2025</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2412.02837" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://github.com/sarthaxxxxx/BATCLIP" title="Code" aria-label="Code" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></a></li>
+                <li><a href="BATCLIP/" title="Project page" aria-label="Project page"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-3.05a15.6 15.6 0 0 0-1.17-3.5A8.04 8.04 0 0 1 18.93 8zM12 4c.83 1.18 1.49 2.55 1.94 4h-3.88c.45-1.45 1.11-2.82 1.94-4zM4.26 8a8.04 8.04 0 0 1 4.22-3.5A15.6 15.6 0 0 0 7.31 8H4.26zM2 12c0-.69.07-1.36.2-2H6c-.07.66-.13 1.32-.13 2 0 .68.06 1.34.13 2H2.2c-.13-.64-.2-1.31-.2-2zm2.26 4h3.05c.27 1.27.66 2.43 1.17 3.5A8.04 8.04 0 0 1 4.26 16zM12 20c-.83-1.18-1.49-2.55-1.94-4h3.88c-.45 1.45-1.11 2.82-1.94 4zm2.34-6H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.4 5.5c.5-1.07.9-2.23 1.17-3.5h3.05a8.04 8.04 0 0 1-4.22 3.5zm1.43-5.5c.07-.66.13-1.32.13-2 0-.68-.06-1.34-.13-2h3.8c.13.64.2 1.31.2 2s-.07 1.36-.2 2h-3.8z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pub" data-tags="adaptation">
+            <div class="pub-body">
+              <h4 class="pub-title">PALM: Pushing Adaptive Learning Rate Mechanisms for Continual Test-Time Adaptation</h4>
+              <p class="pub-authors"><span class="me">Sarthak Kumar Maharana</span>, Baoming Zhang, Yunhui Guo</p>
+              <p class="pub-venue">AAAI Conference on Artificial Intelligence (<span class="highlight">AAAI</span>), 2025 · Oral</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2403.10650" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://github.com/sarthaxxxxx/PALM" title="Code" aria-label="Code" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></a></li>
+                <li><a href="PALM/" title="Project page" aria-label="Project page"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-3.05a15.6 15.6 0 0 0-1.17-3.5A8.04 8.04 0 0 1 18.93 8zM12 4c.83 1.18 1.49 2.55 1.94 4h-3.88c.45-1.45 1.11-2.82 1.94-4zM4.26 8a8.04 8.04 0 0 1 4.22-3.5A15.6 15.6 0 0 0 7.31 8H4.26zM2 12c0-.69.07-1.36.2-2H6c-.07.66-.13 1.32-.13 2 0 .68.06 1.34.13 2H2.2c-.13-.64-.2-1.31-.2-2zm2.26 4h3.05c.27 1.27.66 2.43 1.17 3.5A8.04 8.04 0 0 1 4.26 16zM12 20c-.83-1.18-1.49-2.55-1.94-4h3.88c-.45 1.45-1.11 2.82-1.94 4zm2.34-6H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.4 5.5c.5-1.07.9-2.23 1.17-3.5h3.05a8.04 8.04 0 0 1-4.22 3.5zm1.43-5.5c.07-.66.13-1.32.13-2 0-.68-.06-1.34-.13-2h3.8c.13.64.2 1.31.2 2s-.07 1.36-.2 2h-3.8z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pub" data-tags="driving">
+            <div class="pub-body">
+              <h4 class="pub-title">SELECT: A Submodular Approach for Active LiDAR Semantic Segmentation</h4>
+              <p class="pub-authors">Ruiyu Mao, <span class="me">Sarthak Kumar Maharana</span>, Xulong Tang, Yunhui Guo</p>
+              <p class="pub-venue"><span class="highlight">arXiv</span>, 2025</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2505.11516" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="year-group" data-year="2024">
+        <h3>2024</h3>
+        <div class="year-list">
+          <article class="pub" data-tags="driving">
+            <div class="pub-body">
+              <h4 class="pub-title">STONE: A Submodular Optimization Framework for Active 3D Object Detection</h4>
+              <p class="pub-authors">Ruiyu Mao, <span class="me">Sarthak Kumar Maharana</span>, Rishabh K Iyer, Yunhui Guo</p>
+              <p class="pub-venue">Conference on Neural Information Processing Systems (<span class="highlight">NeurIPS</span>), 2024</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2410.03918" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://github.com/RuiyuM/STONE" title="Code" aria-label="Code" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pub" data-tags="">
+            <div class="pub-body">
+              <h4 class="pub-title">Not Just Change the Labels, Learn the Features: Watermarking Deep Neural Networks with Multi-View Data</h4>
+              <p class="pub-authors">Yuxuan Li, <span class="me">Sarthak Kumar Maharana</span>, Yunhui Guo</p>
+              <p class="pub-venue">European Conference on Computer Vision (<span class="highlight">ECCV</span>), 2024</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2403.10663" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://github.com/liyuxuan-github/MAT" title="Code" aria-label="Code" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pub" data-tags="">
+            <div class="pub-body">
+              <h4 class="pub-title">Acoustic-to-Articulatory Inversion for Dysarthric Speech: Are Pre-trained Self-Supervised Representations Favorable?</h4>
+              <p class="pub-authors"><span class="me">Sarthak Kumar Maharana</span>, Krishna Kamal Adidam, Shoumik Nandi, Ajitesh Srivastava</p>
+              <p class="pub-venue"><span class="highlight">ICASSP</span> SASB Workshop, 2024</p>
+              <ul class="pub-links">
+                <li><a href="https://arxiv.org/abs/2309.01108" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://drive.google.com/file/d/1TpzYqzfHYSTpwdl0qwG2sZdMtFKhQQj0/view?usp=drive_link" title="Poster" aria-label="Poster" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="year-group" data-year="2021">
+        <h3>2021</h3>
+        <div class="year-list">
+          <article class="pub" data-tags="">
+            <div class="pub-body">
+              <h4 class="pub-title">Acoustic-to-Articulatory Inversion for Dysarthric Speech by Using Cross-Corpus Acoustic-Articulatory Data</h4>
+              <p class="pub-authors"><span class="me">Sarthak Kumar Maharana</span>, Aravind Illa, Renuka Mannem, Yamini Belur, Preetie A. Shetty, Veeramani Preethish Kumar, Seena Vengalil, Kiran Polavarapu, Atchayaram Nalini, Prasanta Ghosh</p>
+              <p class="pub-venue">IEEE International Conference on Acoustics, Speech and Signal Processing (<span class="highlight">ICASSP</span>), 2021</p>
+              <ul class="pub-links">
+                <li><a href="https://ieeexplore.ieee.org/document/9413625" title="Paper" aria-label="Paper" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/></svg></a></li>
+                <li><a href="https://drive.google.com/file/d/188MDKXdYPgAHxiyvGJt11-i0OjF1-8Pq/view?usp=drive_link" title="Poster" aria-label="Poster" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a></li>
+                <li><a href="https://drive.google.com/file/d/1LaWKlTzav4VUEnJsb3tBe0WkrSE2sIPX/view?usp=sharing" title="Slides" aria-label="Slides" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm6 5v6l5-3-5-3z"/></svg></a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
     </section>
 
-    <section class="paper-section" id="research">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div class="eyebrow">02 / Research direction</div>
-          <div>
-            <h2 class="section-title">Learning beyond<br>the static world.</h2>
-            <p class="section-intro">My research asks how intelligent systems can perceive, adapt, and make reliable decisions under continual changes BUT without expensive retraining or catastrophic forgetting.</p>
-          </div>
-        </div>
-        <div class="themes reveal">
-          <article class="theme">
-            <div class="theme-number">R / 01</div>
-            <h3>Adaptive intelligence</h3>
-            <div><p>Models that learn during deployment while preserving what they already know, even across long and unpredictable data streams.</p><div class="theme-tags"><span class="tag">Continual learning</span><span class="tag">Test-time adaptation</span><span class="tag">Efficiency</span></div></div>
-          </article>
-          <article class="theme">
-            <div class="theme-number">R / 02</div>
-            <h3>Robust multimodal perception</h3>
-            <div><p>Audio-visual and vision-language systems that remain dependable under corruption, distribution shift, and missing modalities.</p><div class="theme-tags"><span class="tag">Audio-visual AI</span><span class="tag">VLMs</span><span class="tag">Benchmarks</span></div></div>
-          </article>
-          <article class="theme">
-            <div class="theme-number">R / 03</div>
-            <h3>Physical AI</h3>
-            <div><p>Real-time perception, reasoning, and motion planning for autonomous driving models operating in open-ended, safety-critical environments.</p><div class="theme-tags"><span class="tag">Autonomous driving</span><span class="tag">Reasoning</span><span class="tag">Planning</span></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <section id="miscellaneous" aria-labelledby="miscellaneous-heading">
+      <h2 id="miscellaneous-heading">Miscellaneous</h2>
 
-    <section id="work">
-      <div class="shell">
-        <div class="work-head reveal">
-          <div><div class="eyebrow">03 / Selected work</div><h2 class="section-title">Research with<br>real-world friction.</h2></div>
-          <p>Selected work across adaptive learning and multimodal robustness. My full publication record is available on <a href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&amp;hl=en" target="_blank" rel="noopener"><u>Google Scholar</u></a>.</p>
-        </div>
-        <div class="project-grid">
-          <article class="project reveal">
-            <div class="project-visual"><span class="venue">ECCV 2026</span><img src="images/AVReCAP_Fig.png" alt="AVReCAP parameter retrieval framework" loading="lazy"></div>
-            <div class="project-body"><div class="project-kicker">Adaptive multimodal learning</div><h3>AVReCAP</h3><p>Retrieves and adapts cross-modal fusion parameters on demand, enabling audio-visual continual test-time adaptation without catastrophic forgetting.</p><div class="project-links"><a href="https://arxiv.org/abs/2602.18528" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/sarthaxxxxx/AVReCAP" target="_blank" rel="noopener">Code ↗</a><a href="AVReCAP/">Project ↗</a></div></div>
-          </article>
-          <article class="project reveal">
-            <div class="project-visual"><span class="venue">NeurIPS 2025</span><img src="images/av_robust.png" alt="AVROBUSTBENCH benchmark overview" loading="lazy"></div>
-            <div class="project-body"><div class="project-kicker">Benchmark &amp; dataset</div><h3>AVROBUSTBENCH</h3><p>A comprehensive benchmark for audio-visual models facing real-world corruptions at test-time.</p><div class="project-links"><a href="https://arxiv.org/abs/2506.00358" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/sarthaxxxxx/AVROBUSTBENCH" target="_blank" rel="noopener">Code ↗</a><a href="AVROBUSTBENCH/">Project ↗</a></div></div>
-          </article>
-          <article class="project reveal">
-            <div class="project-visual"><span class="venue">ICCV 2025</span><img src="images/framework_v3_skm_page-0001.jpg" alt="BATCLIP bimodal adaptation framework" loading="lazy"></div>
-            <div class="project-body"><div class="project-kicker">Vision-language models</div><h3>BATCLIP</h3><p>Bimodal online test-time adaptation that makes CLIP robust to common visual corruptions and generalizes across domains.</p><div class="project-links"><a href="https://arxiv.org/abs/2412.02837" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/sarthaxxxxx/BATCLIP" target="_blank" rel="noopener">Code ↗</a><a href="BATCLIP/">Project ↗</a></div></div>
-          </article>
-          <article class="project reveal">
-            <div class="project-visual"><span class="venue">AAAI 2025 · Oral</span><img src="images/PALM07.png" alt="PALM continual test-time adaptation results" loading="lazy"></div>
-            <div class="project-body"><div class="project-kicker">Continual adaptation</div><h3>PALM</h3><p>Uses uncertainty and parameter sensitivity to adapt layer-wise learning rates under rapid distribution shifts, efficiently and continuously.</p><div class="project-links"><a href="https://arxiv.org/abs/2403.10650" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/sarthaxxxxx/PALM" target="_blank" rel="noopener">Code ↗</a><a href="PALM/">Project ↗</a></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
+      <h3 id="experience">Experience</h3>
+      <p>I work across academic and industrial research, connecting fundamental questions.</p>
 
-    <section class="paper-section archive" aria-label="Publication archive">
-      <div class="shell">
-        <details>
-          <summary><span>Other publications</span><span>2021 — 2026</span></summary>
-          <div class="archive-list">
-            <div class="archive-paper"><span class="year"><span>2026</span><span class="pub-venue">TMLR</span></span><strong>Continual Test-Time Adaptation in Computer Vision: Methods, Benchmarks, and Future Directions</strong><div class="archive-links"><a href="https://openreview.net/forum?id=mM3r03Xw1V" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/sarthaxxxxx/Awesome-Continual-Test-Time-Adaptation" target="_blank" rel="noopener">Awesome CTTA ↗</a></div></div>
-            <div class="archive-paper"><span class="year"><span>2026</span><span class="pub-venue">TMLR</span></span><strong>Variational Diffusion Unlearning</strong><div class="archive-links"><a href="https://openreview.net/pdf?id=mAHRgieyOV" target="_blank" rel="noopener">Paper ↗</a></div></div>
-            <div class="archive-paper"><span class="year"><span>2025</span><span class="pub-venue">Preprint</span></span><strong>SELECT: A Submodular Approach for Active LiDAR Semantic Segmentation</strong><div class="archive-links"><a href="https://arxiv.org/abs/2505.11516" target="_blank" rel="noopener">arXiv ↗</a></div></div>
-            <div class="archive-paper"><span class="year"><span>2024</span><span class="pub-venue">NeurIPS</span></span><strong>STONE: A Submodular Optimization Framework for Active 3D Object Detection</strong><div class="archive-links"><a href="https://arxiv.org/abs/2410.03918" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/RuiyuM/STONE" target="_blank" rel="noopener">Code ↗</a></div></div>
-            <div class="archive-paper"><span class="year"><span>2024</span><span class="pub-venue">ECCV</span></span><strong>Not Just Change the Labels, Learn the Features: Watermarking DNNs with Multi-View Data</strong><div class="archive-links"><a href="https://arxiv.org/abs/2403.10663" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/liyuxuan-github/MAT" target="_blank" rel="noopener">Code ↗</a></div></div>
-            <div class="archive-paper"><span class="year"><span>2024</span><span class="pub-venue">ICASSP SASB Workshop</span></span><strong>Acoustic-to-Articulatory Inversion for Dysarthric Speech with Self-Supervised Representations</strong><div class="archive-links"><a href="https://arxiv.org/abs/2309.01108" target="_blank" rel="noopener">Paper ↗</a><a href="https://drive.google.com/file/d/1TpzYqzfHYSTpwdl0qwG2sZdMtFKhQQj0/view?usp=drive_link" target="_blank" rel="noopener">Poster ↗</a></div></div>
-            <div class="archive-paper"><span class="year"><span>2021</span><span class="pub-venue">ICASSP</span></span><strong>Acoustic-to-Articulatory Inversion for Dysarthric Speech Using Cross-Corpus Data</strong><div class="archive-links"><a href="https://ieeexplore.ieee.org/document/9413625" target="_blank" rel="noopener">Paper ↗</a><a href="https://drive.google.com/file/d/188MDKXdYPgAHxiyvGJt11-i0OjF1-8Pq/view?usp=drive_link" target="_blank" rel="noopener">Poster ↗</a><a href="https://drive.google.com/file/d/1LaWKlTzav4VUEnJsb3tBe0WkrSE2sIPX/view?usp=sharing" target="_blank" rel="noopener">Slides ↗</a></div></div>
-          </div>
-        </details>
+      <div class="experience-list">
+        <article class="role">
+          <time>Summer 2026</time>
+          <h4>NEC Laboratories America, Inc.</h4>
+          <p class="role-title">Research Scientist Intern</p>
+          <p>Real-time reasoning and closed-loop trajectory planning for autonomous driving in long-tailed scenes.</p>
+        </article>
+        <article class="role">
+          <time>Summer 2025</time>
+          <h4>Dolby Laboratories, Inc.</h4>
+          <p class="role-title">PhD Research Intern</p>
+          <p>Robust audio-visual learning in continual learning settings.</p>
+        </article>
+        <article class="role">
+          <time>2023—Now</time>
+          <h4>The University of Texas at Dallas</h4>
+          <p class="role-title">PhD Candidate · Computer Science</p>
+          <p>Advised by <a href="https://yunhuiguo.github.io/" target="_blank" rel="noopener">Dr. Yunhui Guo</a> in the Data Efficient Intelligent Learning Lab.</p>
+        </article>
       </div>
-    </section>
 
-    <section id="experience">
-      <div class="shell experience-grid">
-        <div class="experience-sticky reveal"><div class="eyebrow">04 / Experience</div><h2 class="section-title">From ideas<br>to systems.</h2><p>I work across academic and industrial research, connecting fundamental questions.</p></div>
-        <div class="timeline reveal">
-          <article class="role"><time>Summer 2026</time><div><h3>NEC Laboratories America, Inc.</h3><div class="role-title mono">Research Scientist Intern</div><p>Real-time reasoning and closed-loop trajectory planning for autonomous driving.</p></div></article>
-          <article class="role"><time>Summer 2025</time><div><h3>Dolby Laboratories, Inc.</h3><div class="role-title mono">PhD Research Intern</div><p>Robust audio-visual learning in continual learning settings.</p></div></article>
-          <article class="role"><time>2023—Now</time><div><h3>The University of Texas at Dallas</h3><div class="role-title mono">PhD Candidate · Computer Science</div><p>Advised by <a href="https://yunhuiguo.github.io/" target="_blank" rel="noopener"><u>Dr. Yunhui Guo</u></a> in the Data Efficient Intelligent Learning Lab.</p></div></article>
+      <h3 id="workshops">Workshops</h3>
+      <div class="experience-list">
+        <article class="role">
+          <time>ICCV 2025</time>
+          <h4><a href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html" target="_blank" rel="noopener">1st Workshop on Multimodal Continual Learning</a></h4>
+          <p class="role-title">Organizer</p>
+        </article>
+        <article class="role">
+          <time>ICML 2025</time>
+          <h4><a href="https://tta-icml2025.github.io/" target="_blank" rel="noopener">2nd Workshop on Test-Time Adaptation</a></h4>
+          <p class="role-title">Co-organizer</p>
+        </article>
+      </div>
+
+      <h3 id="updates">News</h3>
+      <div class="news-list">
+        <article class="news-item"><time>Jul 2026</time><p>Received an ECCV 2026 travel award; will also review for AAAI 2027.</p></article>
+        <article class="news-item"><time>Jun 2026</time><p>Our <a href="https://openreview.net/forum?id=mM3r03Xw1V" target="_blank" rel="noopener">continual test-time adaptation survey</a> was accepted to TMLR.</p></article>
+        <article class="news-item"><time>Jun 2026</time><p><a href="https://arxiv.org/abs/2602.18528" target="_blank" rel="noopener">AVReCAP</a> was accepted to ECCV 2026.</p></article>
+        <article class="news-item"><time>Apr 2026</time><p>I'll be joining NEC Laboratories America to work on real-time reasoning and planning for autonomous driving.</p></article>
+        <article class="news-item"><time>Apr 2026</time><p>Returned to reviewing for <a href="https://neurips.cc/" target="_blank" rel="noopener">NeurIPS 2026</a>.</p></article>
+        <article class="news-item"><time>Feb 2026</time><p><a href="https://openreview.net/pdf?id=mAHRgieyOV" target="_blank" rel="noopener">Variational Diffusion Unlearning</a> was accepted to TMLR.</p></article>
+        <article class="news-item"><time>Sep 2025</time><p><a href="https://arxiv.org/abs/2506.00358" target="_blank" rel="noopener">AVROBUSTBENCH</a> was accepted to NeurIPS Datasets &amp; Benchmarks.</p></article>
+        <article class="news-item"><time>Aug 2025</time><p>Received a travel grant from the ICCV community!</p></article>
+        <article class="news-item"><time>Jun 2025</time><p><a href="https://arxiv.org/abs/2412.02837" target="_blank" rel="noopener">BATCLIP</a> was accepted to ICCV 2025.</p></article>
+        <article class="news-item"><time>May 2025</time><p>We will organize the <a href="https://mclworkshop25.github.io/mcl-iccv2025/ICCV2025/index.html" target="_blank" rel="noopener">1st Workshop on Multimodal Continual Learning</a> at ICCV 2025.</p></article>
+      </div>
+
+      <details>
+        <summary>Old news <span>2024 — 2026</span></summary>
+        <div class="news-list">
+          <article class="news-item"><time>May 2025</time><p>Passed my qualifying examination and became a PhD candidate.</p></article>
+          <article class="news-item"><time>Mar 2025</time><p>We will co-organize the <a href="https://tta-icml2025.github.io/" target="_blank" rel="noopener">2nd Workshop on Test-Time Adaptation</a> at ICML 2025.</p></article>
+          <article class="news-item"><time>Feb 2025</time><p>I'll join <a href="https://www.dolby.com/" target="_blank" rel="noopener">Dolby Laboratories</a> as a PhD Research Intern for Summer 2025.</p></article>
+          <article class="news-item"><time>Dec 2024</time><p><a href="https://arxiv.org/abs/2403.10650v2" target="_blank" rel="noopener">PALM</a> was accepted to AAAI 2025 as an <strong>oral presentation</strong>.</p></article>
+          <article class="news-item"><time>Nov 2024</time><p>Served as a reviewer for <a href="https://cvpr.thecvf.com/" target="_blank" rel="noopener">CVPR 2025</a>.</p></article>
+          <article class="news-item"><time>Oct 2024</time><p>Variational Diffusion Unlearning was accepted to the NeurIPS SafeGenAI Workshop.</p></article>
+          <article class="news-item"><time>Sep 2024</time><p>Our submodular optimization work for active 3D object detection was accepted to NeurIPS 2024.</p></article>
+          <article class="news-item"><time>Aug 2024</time><p>Served as a reviewer for <a href="https://iclr.cc/Conferences/2025" target="_blank" rel="noopener">ICLR 2025</a>.</p></article>
+          <article class="news-item"><time>Jul 2024</time><p>Our work on <a href="https://arxiv.org/abs/2403.10663" target="_blank" rel="noopener">DNN watermarking</a> was accepted to ECCV 2024.</p></article>
         </div>
-      </div>
-    </section>
+      </details>
 
-
-    <section class="contact" id="contact">
-      <div class="shell">
-        <div class="contact-callout reveal">
-          <h2>Let’s build what<br><span>adapts next.</span></h2>
-          <div class="contact-copy"><p>I’m always glad to discuss research collaborations and emerging ideas. I have a knack for finding interesting problems or digging into the teeny-tiny details of a paper.</p><a class="button primary" href="mailto:sarthakmaharana9811@gmail.com">Start a conversation ↗</a></div>
-        </div>
-        <footer><span>© <span id="year">2026</span> Sarthak Kumar Maharana</span><div class="footer-links"><a href="data/Sarthak_CV.pdf">CV</a><a href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&amp;hl=en">Scholar</a><a href="https://github.com/sarthaxxxxx/">GitHub</a><a href="#top">Back to top ↑</a></div></footer>
-      </div>
+      <h3 id="contact">Contact</h3>
+      <p> I’m always glad to discuss research collaborations and emerging ideas. I have a knack for finding interesting problems or digging into the teeny-tiny details of a paper. Feel free to contact!</p>
+      <p><a href="mailto:sarthakmaharana9811@gmail.com">Start a conversation</a></p>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div>© <span id="year">2026</span> Sarthak Kumar Maharana</div>
+    <ul class="socials">
+      <li>
+        <a href="https://github.com/sarthaxxxxx/" aria-label="GitHub" title="GitHub" rel="me noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:sarthakmaharana9811@gmail.com" aria-label="E-mail" title="E-mail">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://scholar.google.com/citations?user=1sIJMUgAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar" rel="me noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/sarthak9811/" aria-label="LinkedIn" title="LinkedIn" rel="me noopener" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 4.126 0 2.063 2.063 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+
+    const chips = document.querySelectorAll('.chip');
+    const pubs = document.querySelectorAll('.pub');
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const tag = chip.dataset.tag;
+
+        chips.forEach((c) => {
+          c.classList.toggle('is-active', c === chip);
+          c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+        });
+
+        if (!tag) {
+          document.body.removeAttribute('data-active-tags');
+          pubs.forEach((pub) => pub.classList.remove('match'));
+          return;
         }
+
+        document.body.setAttribute('data-active-tags', tag);
+        pubs.forEach((pub) => {
+          const tags = (pub.dataset.tags || '').split(/\s+/);
+          pub.classList.toggle('match', tags.includes(tag));
+        });
       });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    });
   </script>
 </body>
 </html>
